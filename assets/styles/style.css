@@ -1,0 +1,8 @@
+body {
+    background-color: gray;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+}
