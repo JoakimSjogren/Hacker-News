@@ -12,6 +12,13 @@
         <li>submit</li>
     </ul>
     <div class = "login-nav-container">
-        <a href = "./login.php" class = "login-btn">Login</a>
+    <?php
+        if (isset($_SESSION['user']) {
+            <a href = "./login.php" class = "login-btn">Login</a>
+        }
+        else {
+            <a href = "./logout.php" class = "login-btn">Logout</a>
+        }
+    ?>
     </div>
 </nav>

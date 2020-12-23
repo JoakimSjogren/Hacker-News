@@ -1,4 +1,6 @@
 <?php
+    declare(strict_types=1);
+
     // require __DIR__ . ('./function.php');
     
     if (isset($_POST['email'], $_POST['password'])) {
@@ -12,7 +14,17 @@
         $statement->execute();
 
         $user = $statement->fetch(PDO::FETCH_ASSOC);
-       
-        die(var_dump($user));
+        
+
+
+        if (isset($user['password']) && password_verify($password, $user['password'])) {
+            $_SESSION['user'] = $user;
+            header("Location: /index.php");
+            exit;
+        }
+        else {
+            header("Location: /login.php");
+            exit;
+        }
     }
 ?>
