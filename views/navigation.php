@@ -13,12 +13,18 @@
     </ul>
     <div class = "login-nav-container">
     <?php
-        if (isset($_SESSION['user']) {
-            <a href = "./login.php" class = "login-btn">Login</a>
-        }
-        else {
+        if (isset($_SESSION['user'])) {
+            ?>
             <a href = "./logout.php" class = "login-btn">Logout</a>
+            <?php
         }
+
+        else {
+            ?>
+            <a href = "./login.php" class = "login-btn">Login</a>
+            <?php
+        }
+
     ?>
     </div>
 </nav>

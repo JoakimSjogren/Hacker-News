@@ -13,7 +13,7 @@
         <?php
         if (isset($_SESSION['user'])) {
             ?>
-                <p>hello  <?php echo $_SESSION['user']['name']?>!</p>
+                <p>hello  <?php echo $_SESSION['user']['name']?>!!!!!</p>
             <?php
         }
         else {
