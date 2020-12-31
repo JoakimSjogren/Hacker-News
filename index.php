@@ -1,7 +1,7 @@
 <?php
     require __DIR__ . "/views/header.php";
     require __DIR__ . "/views/navigation.php";
-
+    session_start();
 
     if (isset($_SESSION['user'])) {
         $userName = $user['Name'];
@@ -11,8 +11,11 @@
 ?>
     <p>
         <?php
+        
         if (isset($_SESSION['user'])) {
+            
             ?>
+               
                 <p>hello  <?php echo $_SESSION['user']['name']?>!!!!!</p>
             <?php
         }

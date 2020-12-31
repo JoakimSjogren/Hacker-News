@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <nav>
     <div class = "logo-nav-container">
         <h5>Hacker News</h5>
