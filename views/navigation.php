@@ -19,7 +19,7 @@
     <?php
         if (isset($_SESSION['user'])) {
             ?>
-            <a href = "./logout.php" class = "login-btn">Logout</a>
+            <a href = "./app/user/logout.php" class = "login-btn">Logout</a>
             <?php
         }
 
