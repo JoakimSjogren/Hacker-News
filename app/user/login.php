@@ -11,7 +11,7 @@
 
         $pdo = new PDO('sqlite:hacker.sqlite');
 
-        //Imp
+       
         $statement = $pdo->prepare('SELECT * from Users WHERE email = :email');
         $statement->bindparam(':email', $email, PDO::PARAM_STR);
         $statement->execute();

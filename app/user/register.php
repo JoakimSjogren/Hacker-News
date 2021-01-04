@@ -15,6 +15,4 @@ if (isset($_POST['email'], $_POST['password'])) {
     $statement->bindparam(':password', $hashedPassword, PDO::PARAM_STR);
     $statement->execute();
     
-    // $content = $pdo->query("SELECT * FROM Users");
-   
 }

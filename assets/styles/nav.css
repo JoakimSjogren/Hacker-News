@@ -1,18 +1,9 @@
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
-body {
-    background-color: gray;
+nav {
+    width: 85vw;
+    height: 2vh;
+    background-color: rgb(161, 64, 51);   
     display: flex;
     justify-content: center;
-}
-
-nav {
-    width: 80vw;
-    display: flex;
-    background-color: rgb(161, 64, 51);   
 }
 
 .logo-nav-container {
