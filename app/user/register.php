@@ -4,7 +4,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $password = $_POST['password'];
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $pdo = new PDO('sqlite:hacker.sqlite');
+    $pdo = new PDO('sqlite:../database/hacker.sqlite');
 
     
 

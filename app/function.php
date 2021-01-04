@@ -5,12 +5,11 @@ session_start();
 
 
 function getPosts() {
-
-
-    $pdo = new PDO('sqlite:hacker.sqlite');
-
+    
+    $pdo = new PDO('sqlite:./app/database/hacker.sqlite');
        
-    $statement = $pdo->prepare('SELECT * from Post');
+    $statement = $pdo->prepare('SELECT * from Posts');
     $statement->execute();
-    die(var_dump($statement));
+    
+    return $statement;
 }

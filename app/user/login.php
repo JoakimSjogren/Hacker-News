@@ -9,7 +9,7 @@
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         $password = $_POST['password'];
 
-        $pdo = new PDO('sqlite:hacker.sqlite');
+        $pdo = new PDO('sqlite:../database/hacker.sqlite');
 
        
         $statement = $pdo->prepare('SELECT * from Users WHERE email = :email');
