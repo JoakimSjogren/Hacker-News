@@ -26,19 +26,18 @@
         <div class = posts-container>
             <!-- Posts -->
             <?php
-            $posts = getPosts();
             
-          for ($i=0; $i < 12; $i++) { 
+            $posts = getPosts();
+
+            $postCount = count($posts);
+          for ($i=0; $i < $postCount; $i++) { 
             ?>
             <div class = 'post'>
-                <p>
+                <a href = "<?= $posts[$i]['link']; ?>">
                   <?= $posts[$i]['title']; ?>
-                </p>
+                </a>
                 <p>
                   <?= $posts[$i]['description']; ?>
-                </p>
-                <p>
-                  <?= $posts[$i]['link']; ?>
                 </p>
             </div>
             <?php

@@ -11,7 +11,7 @@ function getPosts() {
     $statement = $pdo->prepare('SELECT * from Posts');
     $statement->execute();
     
-
+    
     $post = $statement->fetchALL();
     
     return $post;
