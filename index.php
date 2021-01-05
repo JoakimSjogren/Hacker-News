@@ -27,12 +27,18 @@
             <!-- Posts -->
             <?php
             $posts = getPosts();
-            foreach($posts as $post) 
-            {
+            
+          for ($i=0; $i < 12; $i++) { 
             ?>
             <div class = 'post'>
                 <p>
-                  <?= $post; ?>
+                  <?= $posts[$i]['title']; ?>
+                </p>
+                <p>
+                  <?= $posts[$i]['description']; ?>
+                </p>
+                <p>
+                  <?= $posts[$i]['link']; ?>
                 </p>
             </div>
             <?php
