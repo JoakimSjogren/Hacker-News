@@ -13,7 +13,7 @@
         <li>ask</li>
         <li>show</li>
         <li>jobs</li>
-        <li>submit</li>
+        <li><a href = "/views/submit.php">submit</a></li>
     </ul>
     <div class = "login-nav-container">
     <?php

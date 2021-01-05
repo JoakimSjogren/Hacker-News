@@ -1,8 +1,9 @@
 <?php
+    require __DIR__ . "/app/autoload.php";
     require __DIR__ . "/views/header.php";
     require __DIR__ . "/views/navigation.php";
-    require __DIR__ . "/app/function.php";
-    session_start();
+
+    
 
    
 ?>
@@ -31,7 +32,7 @@
             ?>
             <div class = 'post'>
                 <p>
-                <?= $post; ?>
+                  <?= $post; ?>
                 </p>
             </div>
             <?php
