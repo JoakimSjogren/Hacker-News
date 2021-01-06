@@ -20,4 +20,3 @@ if (isset($_POST['title'], $_POST['url'], $_POST['description'])) {
     
     header("Location: /index.php");
 }
-?>

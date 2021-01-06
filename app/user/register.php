@@ -1,6 +1,6 @@
 <?php
 
-    session_start();
+session_start();
 
 if (isset($_POST['email'], $_POST['password'])) {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
@@ -12,11 +12,11 @@ if (isset($_POST['email'], $_POST['password'])) {
     $statement->bindparam(':email', $email, PDO::PARAM_STR);
     $statement->execute();
     $emailCheck = $statement->fetchALL();
-    
+
     if (!$emailCheck) {
         $statement = $pdo->prepare("INSERT INTO 
-        Users (email, password, name, biography, id)
-        VALUES (:email, :password, '', '', 9)");
+        Users (email, password)
+        VALUES (:email, :password)");
         $statement->bindparam(':email', $email, PDO::PARAM_STR);
         $statement->bindparam(':password', $hashedPassword, PDO::PARAM_STR);
         $statement->execute();
@@ -31,5 +31,8 @@ if (isset($_POST['email'], $_POST['password'])) {
         $_SESSION['user'] = $user;
 
         header("Location: /index.php");
+    } else {
+        //Email already taken
+        header("Location: /login.php");
     }
 }

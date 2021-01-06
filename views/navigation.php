@@ -1,10 +1,12 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <nav>
-    <div class = "logo-nav-container">
-        <a href = "/index.php"><h5>Hacker News</h5></a>
+    <div class="logo-nav-container">
+        <a href="/index.php">
+            <h5>Hacker News</h5>
+        </a>
     </div>
     <ul>
         <li>new</li>
@@ -13,33 +15,38 @@
         <li>ask</li>
         <li>show</li>
         <li>jobs</li>
-        <li><a href = "/views/submit.php">submit</a></li>
+        <li><a href="/views/submit.php">submit</a></li>
         <li>
-        <?php
-        
-        
-        ?>
-    </li>
+            <?php
+
+
+            ?>
+        </li>
     </ul>
-    <div class = "login-nav-container">
-    <?php
+    <div class="login-nav-container">
+        <?php
+        if (isset($_SESSION['user'])) {
+
+            if (isset($_SESSION['user']['name'])) {
+        ?>
+                <a href="/views/profile.php"><?php echo $_SESSION['user']['name'] ?></a>
+            <?php
+            } else {
+            ?>
+                <a href="/views/profile.php">Account</a>
+            <?php
+            }
+        }
         if (isset($_SESSION['user'])) {
             ?>
-                <a href = "/views/profile.php">Account</a>
-            <?php
-        }
-        if (isset($_SESSION['user'])) {
-            ?>
-            <a href = "/app/user/logout.php" class = "login-btn">Logout</a>
-            <?php
-        }
-
-        else {
-            ?>
-            <a href = "./login.php" class = "login-btn">Login</a>
-            <?php
+            <a href="/app/user/logout.php" class="login-btn">Logout</a>
+        <?php
+        } else {
+        ?>
+            <a href="./login.php" class="login-btn">Login</a>
+        <?php
         }
 
-    ?>
+        ?>
     </div>
 </nav>

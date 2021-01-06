@@ -4,15 +4,16 @@ declare(strict_types=1);
 session_start();
 
 
-function getPosts() {
-    
+function getPosts()
+{
+
     $pdo = new PDO('sqlite:./app/database/hacker.sqlite');
-       
+
     $statement = $pdo->prepare('SELECT * from Posts');
     $statement->execute();
-    
-    
+
+
     $post = $statement->fetchALL();
-    
+
     return $post;
 }
