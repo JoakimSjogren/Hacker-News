@@ -16,7 +16,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     if (!$emailCheck) {
         $statement = $pdo->prepare("INSERT INTO 
         Users (email, password, name, biography, id)
-        VALUES (:email, :password, '', '', 1)");
+        VALUES (:email, :password, '', '', 9)");
         $statement->bindparam(':email', $email, PDO::PARAM_STR);
         $statement->bindparam(':password', $hashedPassword, PDO::PARAM_STR);
         $statement->execute();

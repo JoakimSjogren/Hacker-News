@@ -1,5 +1,6 @@
 <?php
-     require __DIR__ . "/views/header.php";
-     require __DIR__ . "/views/navigation.php";
-
+     require __DIR__ . "/header.php";   
+     require __DIR__ . "/navigation.php";
 ?>
+
+     <a href="./changepassword.php">Change Password</a>

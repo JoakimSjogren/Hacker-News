@@ -7,19 +7,7 @@
 
    
 ?>
-    <p>
-        <?php
-        
-        if (isset($_SESSION['user'])) {
-            $userName = $_SESSION['user']['name'];
-            ?>
-                <p>
-                <?="Hello $userName!"?>
-                </p>
-            <?php
-        }
-        ?>
-    </p>
+    
 
     <main>
 
