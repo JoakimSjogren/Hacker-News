@@ -1,34 +1,64 @@
 <?php
+session_start();
 
 ?>
-<!-- Login -->
-<form action="app/user/login.php" method = "post">
-<span>Login</span>
-<div class = "form-group">
-    <label for="email">Email</label>
-    <input type="text" name = "email" id = "email" placeholder = "example@email.com" required>
-</div>
 
-<div class = "form-group">
-    <label for="password">Password</label>
-    <input type="password" name = "password" id = "password" placeholder = "********" required>
-</div>
-    <button type = "submit">Login</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
 
-<form action="app/user/register.php" method = "post">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/styles/error.css">
+</head>
 
-<!-- register -->
-<form action="app/user/register.php" method = "post">
-<span>Create Account</span>
-<div class = "form-group">
-    <label for="email">Email</label>
-    <input type="text" name = "email" id = "email" placeholder = "example@email.com" required>
-</div>
+<body>
 
-<div class = "form-group">
-    <label for="password">Password</label>
-    <input type="password" name = "password" id = "password" placeholder = "********" required>
-</div>
-    <button type = "submit">Register</button>
-</form>
+    <!-- Login -->
+    <form action="app/user/login.php" method="post">
+        <span>Login</span>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="example@email.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="********" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+
+    <form action="app/user/register.php" method="post">
+
+        <!-- register -->
+        <?php
+        if (isset($_SESSION['error'])) {
+        ?>
+            <p class="error"> <?php echo ($_SESSION['error']);   ?> </p>
+            <?php
+            unset($_SESSION['error']);
+
+            ?>
+        <?php
+        }
+
+        ?>
+        <form action="app/user/register.php" method="post">
+            <span>Create Account</span>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="********" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+
+</body>
+
+</html>

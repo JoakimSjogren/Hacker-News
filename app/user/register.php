@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if (isset($_POST['email'], $_POST['password'])) {
@@ -8,6 +7,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     $pdo = new PDO('sqlite:../database/hacker.sqlite');
 
+    //Check if email already exists
     $statement =  $pdo->query('SELECT email from Users where email = :email');
     $statement->bindparam(':email', $email, PDO::PARAM_STR);
     $statement->execute();
@@ -30,9 +30,14 @@ if (isset($_POST['email'], $_POST['password'])) {
         $user = $statement->fetch(PDO::FETCH_ASSOC);
         $_SESSION['user'] = $user;
 
+
+
+
+
         header("Location: /index.php");
     } else {
         //Email already taken
+        $_SESSION['error'] = "Email already taken";
         header("Location: /login.php");
     }
 }
