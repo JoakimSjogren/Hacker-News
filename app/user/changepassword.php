@@ -31,6 +31,6 @@ if (isset($_POST['oldpassword'], $_POST['newpassword'])) {
         $statement->execute();
         echo "Password changed!";
     } else {
-        echo "1";
+        echo "wrong password entered";
     }
 }
