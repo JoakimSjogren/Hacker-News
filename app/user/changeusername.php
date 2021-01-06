@@ -9,11 +9,15 @@ if (isset($_POST['username'])) {
 
     $statement = $pdo->prepare('UPDATE Users
     SET name = :newname
-    WHERE id = :id;');
+    WHERE id = :id');
 
     $statement->bindparam(':id', $userId, PDO::PARAM_INT);
     $statement->bindparam(':newname', $newname, PDO::PARAM_STR);
     $statement->execute();
 
-    echo $_SESSION['user']['name'];
+    $user = $_SESSION['user'];
+    $user['name'] = $newname;
+
+    $_SESSION['user'] = $user;
+    header("Location: /index.php");
 }

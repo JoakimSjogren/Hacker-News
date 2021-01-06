@@ -12,9 +12,9 @@ require __DIR__ . "/navigation.php";
 </form>
 
 <form action="/app/user/changeusername.php" method="post">
-     <span>Username</span>
+     <span>Change Username</span>
      <div class="form-group">
-          <input type="text" name="username" id="username" placeholder="username" required>
+          <input type="text" name="username" id="username" placeholder="new username" required>
      </div>
      <button type="submit">Update Username</button>
 </form>
