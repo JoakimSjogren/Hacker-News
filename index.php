@@ -38,6 +38,7 @@ require __DIR__ . "/views/navigation.php";
         </a>
         <p>
           <?= $posts[$i]['description']; ?>
+          <?= $posts[$i]['id']; ?>
         </p>
       </div>
     <?php
