@@ -22,9 +22,9 @@ session_start();
         <?php
         if (isset($_SESSION['user'])) {
 
-            if (isset($_SESSION['user']['name'])) {
+            if (isset($_SESSION['user']['email'])) {
         ?>
-                <a href="/views/profile.php"><?php echo $_SESSION['user']['name'] ?></a>
+                <a href="/views/profile.php"><?php echo $_SESSION['user']['email'] ?></a>
             <?php
             } else {
             ?>

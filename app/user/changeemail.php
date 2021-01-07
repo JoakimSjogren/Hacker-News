@@ -33,6 +33,14 @@ if (isset($_POST['newemail'], $_POST['password'])) {
         $statement->bindparam(':newemail', $newEmail, PDO::PARAM_STR);
         $statement->execute();
         echo "email changed!";
+
+
+        $user = $_SESSION['user'];
+        $user['email'] = $newEmail;
+
+        $_SESSION['user'] = $user;
+
+        header("Location: /views/profile.php");
     } else {
         echo "wrong password entered";
     }
