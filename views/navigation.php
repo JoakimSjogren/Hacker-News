@@ -36,7 +36,7 @@ session_start();
         <?php
         } else {
         ?>
-            <a href="./login.php" class="login-btn">Login</a>
+            <a href="../login.php" class="login-btn">Login</a>
         <?php
         }
 

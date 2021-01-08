@@ -21,9 +21,14 @@ function getPosts()
 
 function getPostById(int $id)
 {
+    $pdo = new PDO('sqlite:../app/database/hacker.sqlite');
 
-    // $title;
-    // $Link;
-    // $user_Id;
+    $statement = $pdo->prepare('SELECT * from Posts where id = :id');
+    $statement->bindparam(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
 
+
+    $post = $statement->fetchALL();
+
+    return $post[0];
 }
