@@ -17,3 +17,13 @@ function getPosts()
 
     return $post;
 }
+
+
+function getPostById(int $id)
+{
+
+    // $title;
+    // $Link;
+    // $user_Id;
+
+}
