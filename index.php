@@ -9,7 +9,6 @@ require __DIR__ . "/views/navigation.php";
 // As a user I should be able to upload a profile avatar image.
 
 // As a user I should be able to edit my posts.
-// As a user I should be able to delete my posts.
 
 // As a user I'm able to view most upvoted posts.
 // As a user I'm able to view new posts.

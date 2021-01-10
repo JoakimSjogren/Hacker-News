@@ -6,6 +6,7 @@ if (isset($_POST['title'], $_POST['url'], $_POST['description'])) {
     $url = $_POST['url'];
     $description = $_POST['description'];
     $userId = $_SESSION['user']['id'];
+    $date = "";
 
 
     $pdo = new PDO('sqlite:../database/hacker.sqlite');

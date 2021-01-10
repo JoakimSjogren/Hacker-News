@@ -16,7 +16,7 @@ if (!isset($_SESSION['user'])) {
     </div>
 
     <div class="form-group">
-        <label for="password">Url</label>
+        <label for="url">Url</label>
         <input type="url" name="url" id="url" required>
     </div>
 
