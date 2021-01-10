@@ -2,6 +2,10 @@
 require __DIR__ . "/../app/autoload.php";
 require __DIR__ . "/header.php";
 
+if (!isset($_SESSION['user'])) {
+    header("Location: /login.php");
+}
+
 ?>
 <!-- Submit form -->
 <form action="/app/user/post.php" method="post">

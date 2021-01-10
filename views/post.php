@@ -15,18 +15,22 @@ if (isset($_GET['id'])) {
     <?php
     //Remove post
     if ($_SESSION['user']['id'] === $postInfo['user_id']) {
+        $linkToPost = '/app/user/removepost.php?id=' . $postId;
     ?>
-        <a href="">Remove Post</a>
+        <a href="<?= $linkToPost ?>">Remove Post</a>
     <?php
     }
     ?>
     <p>
         <?=
             $postInfo['description'];
+
         ?>
     </p>
-
-    <form action="/app/user/postcomment.php" method="post">
+    <?php
+    $linkToComment = '/app/user/postcomment.php?id=' . $postId;
+    ?>
+    <form action="<?= $linkToComment ?>" . method="post">
         <div class="form-group">
             <label for="comment">Comment</label>
             <input type="text" name="comment" id="comment" required>

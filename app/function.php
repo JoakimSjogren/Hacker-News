@@ -46,3 +46,8 @@ function getCommentsByPostId(int $id)
 
     return $post;
 }
+
+
+function getUserById(int $id)
+{
+}

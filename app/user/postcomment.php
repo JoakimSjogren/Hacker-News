@@ -1,10 +1,14 @@
 <?php
 session_start();
-if (isset($_POST['comment'])) {
+if (isset($_POST['comment'], $_GET['id'])) {
+
+
 
     $content = $_POST['comment'];
     $userId = $_SESSION['user']['id'];
-    $postId = 1;
+    $postId = $_GET['id'];
+
+
 
     $pdo = new PDO('sqlite:../database/hacker.sqlite');
 
@@ -18,5 +22,5 @@ if (isset($_POST['comment'])) {
 
     $statement->execute();
 
-    header("Location: /index.php");
+    header("Location: /views/post.php?id=" . $postId);
 }
