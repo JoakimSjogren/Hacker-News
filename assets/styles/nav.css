@@ -26,3 +26,14 @@ nav ul li {
     display: flex;
     justify-content: flex-end;
 }
+
+.login-btn, .account-btn {
+    margin-left: 20px;
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
+
+a {
+    font-size: 1.2rem;
+}
+

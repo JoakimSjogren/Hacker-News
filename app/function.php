@@ -22,7 +22,7 @@ function getPostsByMostUppvotes()
 {
     $pdo = new PDO('sqlite:../app/database/hacker.sqlite');
 
-    $statement = $pdo->prepare('SELECT * FROM Posts order by uppvotes ASC');
+    $statement = $pdo->prepare('SELECT * FROM Posts order by uppvotes DESC');
     $statement->execute();
 
     $post = $statement->fetchALL();

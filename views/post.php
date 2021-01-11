@@ -51,18 +51,19 @@ if (isset($_GET['id'])) {
             ?>
         </p>
     </div>
-    <?php
-    $linkToComment = '/app/user/postcomment.php?id=' . $postId;
-    ?>
-    <form action="<?= $linkToComment ?>" . method="post">
-        <div class="form-group">
-            <label for="comment">Comment</label>
-            <input type="text" name="comment" id="comment" required>
-        </div>
+    <div class="post-comment-container">
+        <?php
+        $linkToComment = '/app/user/postcomment.php?id=' . $postId;
+        ?>
+        <form action="<?= $linkToComment ?>" . method="post">
+            <div class="form-group">
+                <label for="comment">Comment</label>
+                <input type="text" name="comment" id="comment" required>
+            </div>
 
-        <button type="submit">Post Comment</button>
-    </form>
-
+            <button type="submit">Post Comment</button>
+        </form>
+    </div>
     <!-- Comments -->
 
     <?php

@@ -9,9 +9,9 @@ session_start();
         </a>
     </div>
     <ul>
-        <li>New</li>
+        <li><a href="/index.php">New</a></li>
         <li><a href="..//../views/mostupvotes.php">Most upvotes</a></li>
-        <li><a href="/views/submit.php">submit</a></li>
+        <li><a href="/views/submit.php">Submit</a></li>
         <li>
             <?php
 
@@ -24,11 +24,11 @@ session_start();
 
             if (isset($_SESSION['user']['email'])) {
         ?>
-                <a href="/views/profile.php"><?php echo $_SESSION['user']['email'] ?></a>
+                <a href="/views/profile.php" class="account-btn"><?php echo $_SESSION['user']['email'] ?></a>
             <?php
             } else {
             ?>
-                <a href="/views/profile.php">Account</a>
+                <a href="/views/profile.php" class="account-btn">Account</a>
             <?php
             }
             ?>

@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-
-if (isset($_GET['id'])) {
+$postId = $_GET['id'];
+if (isset($_GET['id'], $_SESSION['user'])) {
 
     $userId = $_SESSION['user']['id'];
-    $postId = $_GET['id'];
+
 
     $pdo = new PDO('sqlite:../database/hacker.sqlite');
 
@@ -16,7 +16,6 @@ if (isset($_GET['id'])) {
     $statement->execute();
     $uppvoted = $statement->fetchALL();
 
-    // die(var_dump($uppvoted[0][0]));
     //Uppvote
     if ($uppvoted[0][0] === null) {
         $statement = $pdo->query('INSERT INTO Uppvotes (user_id, post_id)
@@ -47,5 +46,5 @@ if (isset($_GET['id'])) {
         $statement->bindparam(':id', $postId, PDO::PARAM_STR);
         $statement->execute();
     }
-    header("Location: /views/post.php?id=" . $postId);
 }
+header("Location: /views/post.php?id=" . $postId);
