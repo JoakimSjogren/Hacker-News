@@ -10,7 +10,7 @@ session_start();
     </div>
     <ul>
         <li>New</li>
-        <li>Most uppvotes</li>
+        <li><a href="..//../views/mostupvotes.php">Most upvotes</a></li>
         <li><a href="/views/submit.php">submit</a></li>
         <li>
             <?php

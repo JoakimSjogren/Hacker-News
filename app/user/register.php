@@ -11,9 +11,9 @@ if (isset($_POST['email'], $_POST['password'])) {
     $statement =  $pdo->query('SELECT email from Users where email = :email');
     $statement->bindparam(':email', $email, PDO::PARAM_STR);
     $statement->execute();
-    $emailCheck = $statement->fetchALL();
+    $emailTaken = $statement->fetchALL();
 
-    if (!$emailCheck) {
+    if (!$emailTaken) {
         $statement = $pdo->prepare("INSERT INTO 
         Users (email, password)
         VALUES (:email, :password)");

@@ -1,20 +1,7 @@
 <?php
-require __DIR__ . "/app/autoload.php";
-require __DIR__ . "/views/header.php";
-require __DIR__ . "/views/navigation.php";
-
-
-
-
-
-// As a user I'm able to view most upvoted posts.
-// As a user I'm able to view new posts.
-
-// As a user I should be able to upvote posts.
-// As a user I should be able to remove upvote from posts.
-
-// As a user I'm able to edit my comments.
-// As a user I'm able to delete my comments
+require __DIR__ . "..//../app/autoload.php";
+require __DIR__ . "/header.php";
+require __DIR__ . "/navigation.php";
 
 ?>
 
@@ -25,7 +12,7 @@ require __DIR__ . "/views/navigation.php";
 
     <?php
 
-    $posts = getPostsByNewest();
+    $posts = getPostsByMostUppvotes();
 
     $postCount = count($posts);
     for ($i = 0; $i < $postCount; $i++) {

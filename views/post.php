@@ -8,11 +8,11 @@ if (isset($_GET['id'])) {
     $postInfo = getPostById($postId);
 
 ?>
-    
-            <h2><?= $postInfo['title'] ?></h2>
-        <a href="<?= $postInfo['link'] ?>">
-          <h5><?= $postInfo['link'] ?></h5>
-        </a>
+
+    <h2><?= $postInfo['title'] ?></h2>
+    <a href="<?= $postInfo['link'] ?>">
+        <h5><?= $postInfo['link'] ?></h5>
+    </a>
     <?php
     //Remove post
     if ($_SESSION['user']['id'] === $postInfo['user_id']) {
@@ -23,14 +23,22 @@ if (isset($_GET['id'])) {
         <a href="<?= $linkToEditPost ?>">Edit Post</a>
     <?php
     }
-    ?>
-    <div class = "description-container">
-    <p>
-        <?=
-            $postInfo['description'];
 
-        ?>
-    </p>
+    $linkToUppvote = '/app/user/uppvote.php?id=' . $postId;
+    $totalUppvotes = getUppvoteAmountById($postId);
+
+    ?>
+    <form action="<?= $linkToUppvote ?>" method="post">
+        <button class="like-button" type="submit"><?= $totalUppvotes['uppvotes'] ?></button>
+    </form>
+
+    <div class="description-container">
+        <p>
+            <?=
+                $postInfo['description'];
+
+            ?>
+        </p>
     </div>
     <?php
     $linkToComment = '/app/user/postcomment.php?id=' . $postId;
@@ -51,11 +59,11 @@ if (isset($_GET['id'])) {
 
     foreach ($comments as $comment) {
     ?>
-    <div class = "comment-container">
-        <p>
+        <div class="comment-container">
+            <p>
 
-            <?= $comment['content']; ?>
-        </p>
+                <?= $comment['content']; ?>
+            </p>
         </div>
 <?php
     }
