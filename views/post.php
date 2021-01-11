@@ -26,11 +26,22 @@ if (isset($_GET['id'])) {
 
     $linkToUppvote = '/app/user/uppvote.php?id=' . $postId;
     $totalUppvotes = getUppvoteAmountById($postId);
+    $hasUpvotedPost = checkIfPostIsUpvoted($postId);
 
+    if (!$hasUpvotedPost) {
     ?>
-    <form action="<?= $linkToUppvote ?>" method="post">
-        <button class="like-button" type="submit"><?= $totalUppvotes['uppvotes'] ?></button>
-    </form>
+        <form action="<?= $linkToUppvote ?>" method="post">
+            <button class="like-button" type="submit"><?= $totalUppvotes['uppvotes'] ?></button>
+        </form>
+    <?php
+    } else {
+    ?>
+        <form action="<?= $linkToUppvote ?>" method="post">
+            <button class="like-button upvoted" type="submit"><?= $totalUppvotes['uppvotes'] ?></button>
+        </form>
+    <?php
+    }
+    ?>
 
     <div class="description-container">
         <p>

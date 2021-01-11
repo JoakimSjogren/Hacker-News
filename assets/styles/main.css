@@ -46,3 +46,12 @@ a:hover {
     width: 100px;
 }
 
+.like-button {
+    width: 30px;
+    height: 30px;
+}
+
+.upvoted {
+    background-color: cornflowerblue;
+}
+
