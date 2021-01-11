@@ -25,6 +25,16 @@ if (isset($_GET['id'])) {
         $statement->bindparam(':id', $postId, PDO::PARAM_INT);
         $statement->execute();
 
+        $statement = $pdo->prepare('DELETE FROM Comments
+        WHERE post_id = :id');
+        $statement->bindparam(':id', $postId, PDO::PARAM_INT);
+        $statement->execute();
+
+        $statement = $pdo->prepare('DELETE FROM Uppvotes
+        WHERE post_id = :id');
+        $statement->bindparam(':id', $postId, PDO::PARAM_INT);
+        $statement->execute();
+
         header("Location: /index.php");
     }
 }
