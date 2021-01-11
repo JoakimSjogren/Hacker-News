@@ -31,6 +31,6 @@ if (isset($_GET['id'])) {
         $statement->bindparam(':link', $link, PDO::PARAM_STR);
         $statement->execute();
 
-        header("Location: /index.php");
+        header("Location: /views/post.php?id=" . $postId);
     }
 }

@@ -32,3 +32,17 @@ a:hover {
     color: white;
 }
 
+.comment-container, .description-container {
+    border: 1px solid black;
+    width: 40vw;
+}
+
+.profile-container {
+    width: 85vw;
+    background-color: rgb(54, 54, 54);
+    display: flex;
+}
+.profile-picture {
+    width: 100px;
+}
+

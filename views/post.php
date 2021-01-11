@@ -8,10 +8,11 @@ if (isset($_GET['id'])) {
     $postInfo = getPostById($postId);
 
 ?>
-    <a href="<?= $postInfo['link'] ?>">
-        <h2><?= $postInfo['title'] ?></h2>
-        <h5><?= $postInfo['link'] ?></h5>
-    </a>
+    
+            <h2><?= $postInfo['title'] ?></h2>
+        <a href="<?= $postInfo['link'] ?>">
+          <h5><?= $postInfo['link'] ?></h5>
+        </a>
     <?php
     //Remove post
     if ($_SESSION['user']['id'] === $postInfo['user_id']) {
@@ -23,12 +24,14 @@ if (isset($_GET['id'])) {
     <?php
     }
     ?>
+    <div class = "description-container">
     <p>
         <?=
             $postInfo['description'];
 
         ?>
     </p>
+    </div>
     <?php
     $linkToComment = '/app/user/postcomment.php?id=' . $postId;
     ?>
@@ -48,10 +51,12 @@ if (isset($_GET['id'])) {
 
     foreach ($comments as $comment) {
     ?>
+    <div class = "comment-container">
         <p>
 
             <?= $comment['content']; ?>
         </p>
+        </div>
 <?php
     }
 }

@@ -1,7 +1,9 @@
 <?php
-session_start();
 
 declare(strict_types=1);
+session_start();
+
+
 
 if (isset($_POST['oldpassword'], $_POST['newpassword'])) {
     $pdo = new PDO('sqlite:../database/hacker.sqlite');
@@ -31,8 +33,8 @@ if (isset($_POST['oldpassword'], $_POST['newpassword'])) {
         $statement->bindparam(':id', $userId, PDO::PARAM_INT);
         $statement->bindparam(':newpassword', $newpassword, PDO::PARAM_STR);
         $statement->execute();
-        echo "Password changed!";
+        header("Location: /views/profile.php");
     } else {
-        echo "wrong password entered";
+        echo "Wrong password entered";
     }
 }
