@@ -1,0 +1,34 @@
+@media screen and (max-width: 1500px) {
+
+   
+    .right-div a, .logo, a, .login-btn, .account-btn{
+        font-size: 1.4rem;
+    }
+
+    .right-div-post span {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 900px) { 
+
+    nav, .posts-container {
+        width: 100vw;
+    }
+
+    .right-div a, .logo, a, .login-btn, .account-btn{
+        font-size: .8rem;
+    }
+
+    .right-div-post span {
+        font-size: .6rem;
+    }
+
+    .login-btn, .account-btn { 
+        margin: 0px;
+    }
+
+    nav ul li {
+        margin-left: 0px;
+    }
+}
