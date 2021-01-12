@@ -30,7 +30,7 @@ $biography = $_SESSION['user']['biography'];
         </form>
     </div>
     <form action="/app/user/updatebiography.php" method="post">
-        <span>biography</span>
+        <span>Biography</span>
         <div class="form-group">
             <input class="biography" value="<?php echo $biography ?>" type="text" name="biography" id="biography" required>
         </div>

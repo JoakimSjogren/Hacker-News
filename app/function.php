@@ -9,7 +9,7 @@ function getPostsByNewest()
 
     $pdo = new PDO('sqlite:./app/database/hacker.sqlite');
 
-    $statement = $pdo->prepare('SELECT * from Posts');
+    $statement = $pdo->prepare('SELECT * FROM Posts ORDER BY date(created_at) ASC');
     $statement->execute();
 
 

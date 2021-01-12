@@ -27,6 +27,7 @@ require __DIR__ . "/navigation.php";
         <p>
           <?= $posts[$i]['description']; ?>
           <?= $posts[$i]['uppvotes']; ?>
+          <?= $posts[$i]['created_at']; ?>
         </p>
       </div>
 

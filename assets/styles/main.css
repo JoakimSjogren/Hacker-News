@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -20,10 +21,29 @@ body {
     flex-direction: column;
 }
 
-.post {
-    border: 1px solid black;
+.post-submit-form {
+    padding-top: 30vh;
 }
 
+.post {
+    border: 1px solid black;
+    display: flex;
+}
+
+.left-div-post {
+    width: 42.5;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.right-div-post {
+    width: 42.5;
+    margin-left: auto;
+}
+
+.right-div-post span {
+    font-size: 2.4rem;
+}
 a {
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -71,7 +91,7 @@ a:hover, .logo:hover {
 }
 
 .right-div a, .logo{
-    font-size: 1.3rem;
+    font-size: 2.4rem;
 }
 
 input, button {

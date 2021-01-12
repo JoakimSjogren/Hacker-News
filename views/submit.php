@@ -8,7 +8,7 @@ if (!isset($_SESSION['user'])) {
 
 ?>
 <!-- Submit form -->
-<form action="/app/user/post.php" method="post">
+<form action="/app/user/post.php" method="post" class="post-submit-form">
     <span>Submit a post</span>
     <div class="form-group">
         <label for="title">Title</label>
