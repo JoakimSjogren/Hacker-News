@@ -58,6 +58,20 @@ function getCommentsByPostId(int $id)
     return $post;
 }
 
+function getCommentById(int $id)
+{
+    $pdo = new PDO('sqlite:../app/database/hacker.sqlite');
+
+    $statement = $pdo->prepare('SELECT * from Comments where id = :id');
+    $statement->bindparam(':id', $id, PDO::PARAM_INT);
+    $statement->execute();
+
+
+    $comment = $statement->fetchALL(PDO::FETCH_ASSOC);
+
+    return $comment[0];
+}
+
 
 
 

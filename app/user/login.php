@@ -26,7 +26,7 @@ if (isset($_POST['email'], $_POST['password'])) {
         header("Location: /index.php");
         exit;
     } else {
-        header("Location: /login.php");
+        header("Location: /views/login.php");
         exit;
     }
 }

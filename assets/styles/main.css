@@ -74,7 +74,6 @@ a:hover, .logo:hover {
     font-size: 1.3rem;
 }
 
-.biography {
-    
+input, button {
+    color: black;
 }
-

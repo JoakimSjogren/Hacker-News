@@ -38,6 +38,6 @@ if (isset($_POST['email'], $_POST['password'])) {
     } else {
         //Email already taken
         $_SESSION['error'] = "Email already taken";
-        header("Location: /login.php");
+        header("Location: /views/login.php");
     }
 }

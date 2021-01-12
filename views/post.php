@@ -73,14 +73,23 @@ if (isset($_GET['id'])) {
 
     <?php
     $comments = getCommentsByPostId($postId);
-
     foreach ($comments as $comment) {
     ?>
         <div class="comment-container">
             <p>
-
                 <?= $comment['content']; ?>
             </p>
+            <?php
+            if ($_SESSION['user']['id'] === $comment['user_id']) {
+
+                $commentId = $comment['id'];
+
+                $linkToEditComment = '/views/editcomment.php?id=' . $commentId;
+            ?>
+                <a href="<?= $linkToEditComment ?>">Edit Comment</a>
+            <?php
+            }
+            ?>
         </div>
 <?php
     }

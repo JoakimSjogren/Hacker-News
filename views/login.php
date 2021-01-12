@@ -30,7 +30,7 @@ session_start();
         <button type="submit">Login</button>
     </form>
 
-    <form action="app/user/register.php" method="post" class="register-form">
+    <form action="/app/user/register.php" method="post" class="register-form">
 
         <!-- register -->
         <?php
