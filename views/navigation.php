@@ -5,7 +5,7 @@ session_start();
 <nav>
     <div class="logo-nav-container">
         <a href="/index.php">
-            <h5>Hacker News</h5>
+            <h5 class="logo">Hacker News</h5>
         </a>
     </div>
     <ul>
@@ -36,7 +36,7 @@ session_start();
         <?php
         } else {
         ?>
-            <a href="../login.php" class="login-btn">Login</a>
+            <a href="/views/login.php" class="login-btn">Login</a>
         <?php
         }
 

@@ -6,14 +6,19 @@ require __DIR__ . "/../app/function.php";
 if (isset($_GET['id'])) {
     $postId = $_GET['id'];
     $postInfo = getPostById($postId);
-
+    $postAuthorId = $postInfo['user_id'];
 ?>
 
     <h2><?= $postInfo['title'] ?></h2>
     <a href="<?= $postInfo['link'] ?>">
         <h5><?= $postInfo['link'] ?></h5>
     </a>
+
     <?php
+    $src = findImageById($postAuthorId);
+
+    echo '<img class = "profile-picture" src="' . $src . '">';
+
     //Remove post
     if ($_SESSION['user']['id'] === $postInfo['user_id']) {
         $linkToRemovePost = '/app/user/removepost.php?id=' . $postId;

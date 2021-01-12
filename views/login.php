@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -11,12 +10,13 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/styles/error.css">
+    <link rel="stylesheet" href="/assets/styles/login.css">
 </head>
 
 <body>
 
     <!-- Login -->
-    <form action="app/user/login.php" method="post">
+    <form action="/app/user/login.php" method="post" class="login-form">
         <span>Login</span>
         <div class="form-group">
             <label for="email">Email</label>
@@ -30,7 +30,7 @@ session_start();
         <button type="submit">Login</button>
     </form>
 
-    <form action="app/user/register.php" method="post">
+    <form action="app/user/register.php" method="post" class="register-form">
 
         <!-- register -->
         <?php

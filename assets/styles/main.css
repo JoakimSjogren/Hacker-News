@@ -29,7 +29,7 @@ a {
     color: rgb(255, 255, 255);
 }
 
-a:hover {
+a:hover, .logo:hover {
     color: rgb(119, 194, 255);
 }
 
@@ -70,7 +70,7 @@ a:hover {
     justify-content: center;
 }
 
-.right-div a{
+.right-div a, .logo{
     font-size: 1.3rem;
 }
 
