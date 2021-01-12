@@ -6,7 +6,7 @@ if (isset($_GET['id'])) {
 
     $commentId = $_GET['id'];
 
-    $content = $_POST['content'];
+    $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);;
 
 
 

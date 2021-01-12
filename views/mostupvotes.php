@@ -18,16 +18,22 @@ require __DIR__ . "/navigation.php";
     for ($i = 0; $i < $postCount; $i++) {
       $linkToPost =  '/views/post.php?id=' . $posts[$i]['id'];
     ?>
-
       <div class='post'>
 
         <a href=<?php echo $linkToPost ?>>
-          <?= $posts[$i]['title']; ?>
+          <div class="left-div-post">
+            <?= $posts[$i]['title']; ?> <br>
+            <?= $posts[$i]['description']; ?>
+          </div>
         </a>
         <p>
-          <?= $posts[$i]['description']; ?>
-          <?= $posts[$i]['uppvotes']; ?>
-          <?= $posts[$i]['created_at']; ?>
+
+        <div class="right-div-post">
+          <span> <?= "Upvotes:" . $posts[$i]['uppvotes']; ?> </span> <br>
+          <span> <?= $posts[$i]['created_at']; ?> </span>
+        </div>
+
+
         </p>
       </div>
 

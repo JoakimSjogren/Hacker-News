@@ -2,9 +2,9 @@
 session_start();
 if (isset($_POST['title'], $_POST['url'], $_POST['description'])) {
 
-    $title = $_POST['title'];
+    $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
     $url = $_POST['url'];
-    $description = $_POST['description'];
+    $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
     $userId = $_SESSION['user']['id'];
     $date = date("Y-m-d H:i:s", time());
 

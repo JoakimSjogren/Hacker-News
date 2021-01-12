@@ -6,9 +6,9 @@ if (isset($_GET['id'])) {
 
     $postId = $_GET['id'];
 
-    $title = $_POST['title'];
-    $link = $_POST['url'];
-    $description = $_POST['description'];
+    $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+    $link = filter_var($_POST['url'], FILTER_SANITIZE_URL);
+    $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
 
 
     $pdo = new PDO('sqlite:../database/hacker.sqlite');

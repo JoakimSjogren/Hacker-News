@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
 
     <h2><?= $postInfo['title'] ?></h2>
     <a href="<?= $postInfo['link'] ?>">
-        <h5><?= $postInfo['link'] ?></h5>
+        <h5 class="post-link"><?= $postInfo['link'] ?></h5>
     </a>
 
     <?php
@@ -53,7 +53,7 @@ if (isset($_GET['id'])) {
     <div class="description-container">
         <p>
             <?=
-                $postInfo['description'];
+            $postInfo['description'];
 
             ?>
         </p>

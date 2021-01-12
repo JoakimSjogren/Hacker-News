@@ -8,6 +8,11 @@
     .right-div-post span {
         font-size: 1.2rem;
     }
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 @media screen and (max-width: 900px) { 

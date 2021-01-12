@@ -13,7 +13,6 @@ if (isset($_POST['oldpassword'], $_POST['newpassword'])) {
     $userId = $_SESSION['user']['id'];
 
 
-
     $statement = $pdo->prepare('SELECT password from Users WHERE id = :id');
     $statement->bindparam(':id', $userId, PDO::PARAM_STR);
     $statement->execute();
