@@ -3,7 +3,7 @@ require __DIR__ . "/../app/autoload.php";
 require __DIR__ . "/header.php";
 
 if (!isset($_SESSION['user'])) {
-    header("Location: /login.php");
+    header("Location: /views/login.php");
 }
 
 ?>

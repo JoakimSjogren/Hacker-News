@@ -109,16 +109,18 @@ function getUppvoteAmountById($id)
 
 function checkIfPostIsUpvoted($postId)
 {
-    $pdo = new PDO('sqlite:../app/database/hacker.sqlite');
-    $userId = $_SESSION['user']['id'];
+    if (isset($_SESSION['user'])) {
+        $pdo = new PDO('sqlite:../app/database/hacker.sqlite');
+        $userId = $_SESSION['user']['id'];
 
-    $statement = $pdo->prepare('SELECT * from Uppvotes where post_id = :postId and user_id = :userId');
-    $statement->bindparam(':postId', $postId, PDO::PARAM_INT);
-    $statement->bindparam(':userId', $userId, PDO::PARAM_INT);
-    $statement->execute();
+        $statement = $pdo->prepare('SELECT * from Uppvotes where post_id = :postId and user_id = :userId');
+        $statement->bindparam(':postId', $postId, PDO::PARAM_INT);
+        $statement->bindparam(':userId', $userId, PDO::PARAM_INT);
+        $statement->execute();
 
 
-    $post = $statement->fetchALL(PDO::FETCH_ASSOC);
+        $post = $statement->fetchALL(PDO::FETCH_ASSOC);
 
-    return $post[0];
+        return $post[0];
+    }
 }

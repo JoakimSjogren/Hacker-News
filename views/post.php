@@ -20,13 +20,15 @@ if (isset($_GET['id'])) {
     echo '<img class = "profile-picture" src="' . $src . '">';
 
     //Remove post
-    if ($_SESSION['user']['id'] === $postInfo['user_id']) {
-        $linkToRemovePost = '/app/user/removepost.php?id=' . $postId;
-        $linkToEditPost = '/views/editpost.php?id=' . $postId;
+    if (isset($_SESSION['user'])) {
+        if ($_SESSION['user']['id'] === $postInfo['user_id']) {
+            $linkToRemovePost = '/app/user/removepost.php?id=' . $postId;
+            $linkToEditPost = '/views/editpost.php?id=' . $postId;
     ?>
-        <a href="<?= $linkToRemovePost ?>">Remove Post</a>
-        <a href="<?= $linkToEditPost ?>">Edit Post</a>
-    <?php
+            <a href="<?= $linkToRemovePost ?>">Remove Post</a>
+            <a href="<?= $linkToEditPost ?>">Edit Post</a>
+        <?php
+        }
     }
 
     $linkToUppvote = '/app/user/uppvote.php?id=' . $postId;
@@ -34,7 +36,7 @@ if (isset($_GET['id'])) {
     $hasUpvotedPost = checkIfPostIsUpvoted($postId);
 
     if (!$hasUpvotedPost) {
-    ?>
+        ?>
         <form action="<?= $linkToUppvote ?>" method="post">
             <button class="like-button" type="submit"><?= $totalUppvotes['uppvotes'] ?></button>
         </form>
@@ -80,14 +82,16 @@ if (isset($_GET['id'])) {
                 <?= $comment['content']; ?>
             </p>
             <?php
-            if ($_SESSION['user']['id'] === $comment['user_id']) {
+            if (isset($_SESSION['user'])) {
+                if ($_SESSION['user']['id'] === $comment['user_id']) {
 
-                $commentId = $comment['id'];
+                    $commentId = $comment['id'];
 
-                $linkToEditComment = '/views/editcomment.php?id=' . $commentId;
+                    $linkToEditComment = '/views/editcomment.php?id=' . $commentId;
             ?>
-                <a href="<?= $linkToEditComment ?>">Edit Comment</a>
+                    <a href="<?= $linkToEditComment ?>">Edit Comment</a>
             <?php
+                }
             }
             ?>
         </div>
