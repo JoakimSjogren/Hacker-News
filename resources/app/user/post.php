@@ -1,7 +1,8 @@
 <?php
-session_start();
 
 declare(strict_types=1);
+session_start();
+
 if (isset($_POST['title'], $_POST['url'], $_POST['description'])) {
 
     $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);

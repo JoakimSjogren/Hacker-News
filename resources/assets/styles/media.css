@@ -16,6 +16,28 @@
 }
 
 @media screen and (max-width: 900px) { 
+    /* Post page */
+    .post-author-picture {
+        width: 75px;
+        height: 75px;
+    }
+
+    .author-post {
+        font-size: .6rem;
+        text-align: center;
+     }
+
+    .post-comment-container, .post-comment-container input, .post-comment-container button {
+        font-size: .8rem;
+    }
+
+    .like-button {
+        width: 25px;
+        height: 25px;
+        
+    }
+
+    /* nav */
 
     nav, .posts-container {
         width: 100vw;

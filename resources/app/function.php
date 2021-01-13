@@ -121,7 +121,11 @@ function checkIfPostIsUpvoted($postId)
 
         $post = $statement->fetchALL(PDO::FETCH_ASSOC);
 
-        return $post[0];
+        if (count($post) > 0) {
+            return $post[0];
+        } else {
+            return $post;
+        }
     }
 }
 
