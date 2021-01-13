@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 session_start();
 
-if (isset($_POST['email'], $_POST['password'])) {
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $password = $_POST['password'];
+if (isset($_POST['login-email'], $_POST['login-password'])) {
+    $email = filter_var($_POST['login-email'], FILTER_SANITIZE_EMAIL);
+    $password = $_POST['login-password'];
     $pdo = new PDO('sqlite:../database/hacker.sqlite');
 
 

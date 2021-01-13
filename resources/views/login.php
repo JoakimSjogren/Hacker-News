@@ -20,13 +20,13 @@ session_start();
     <form action="/app/user/login.php" method="post" class="login-form">
         <span>Login</span>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" placeholder="example@email.com" required>
+            <label for="login-email">Email</label>
+            <input type="text" name="login-email" id="login-email" placeholder="example@email.com" required>
         </div>
 
         <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="********" required>
+            <label for="login-password">Password</label>
+            <input type="password" name="login-password" id="login-password" placeholder="********" required>
         </div>
         <button type="submit">Login</button>
     </form>
@@ -49,13 +49,13 @@ session_start();
         <form action="app/user/register.php" method="post">
             <span>Create Account</span>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" placeholder="example@email.com" required>
+                <label for="register-email">Email</label>
+                <input type="text" name="register-email" id="register-email" placeholder="example@email.com" required>
             </div>
 
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="********" required>
+                <label for="register-password">Password</label>
+                <input type="password" name="register-password" id="register-password" placeholder="********" required>
             </div>
             <button type="submit">Register</button>
         </form>
