@@ -38,7 +38,7 @@ a {
 }
 
 .hamburger {
-    position: fixed;
+    position: absolute;
     z-index: 10;
     width: 20px;
     height: 20px;

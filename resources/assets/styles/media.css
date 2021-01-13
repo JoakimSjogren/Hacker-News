@@ -28,7 +28,7 @@
      }
 
     .post-comment-container, .post-comment-container input, .post-comment-container button {
-        font-size: .8rem;
+        font-size: 1.2rem;
     }
 
     .like-button {
@@ -115,5 +115,17 @@
 
     .link-to-edit-comment {
         font-size: .65rem;
+    }
+
+    .post-author-info a {
+        font-size: .8rem;
+    }
+
+    .profile-container {
+        width: 100vw; 
+    }
+
+    .right-div-profile {
+        margin-left: 0;
     }
 }

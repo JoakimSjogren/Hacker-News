@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-// require __DIR__ . "/autoload.php";
 
 
 function getPostsByNewest()
@@ -9,9 +8,8 @@ function getPostsByNewest()
 
     $pdo = new PDO('sqlite:./app/database/hacker.sqlite');
 
-    $statement = $pdo->prepare('SELECT * FROM Posts ORDER BY date(created_at) ASC');
+    $statement = $pdo->prepare('SELECT * FROM Posts ORDER BY (created_at) DESC');
     $statement->execute();
-
 
     $post = $statement->fetchALL();
 
