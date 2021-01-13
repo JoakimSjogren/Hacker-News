@@ -19,8 +19,7 @@ if (isset($_GET['id'], $_SESSION['user'])) {
     $statement->execute();
     $uppvoted = $statement->fetchALL();
 
-    //Uppvote
-    if ($uppvoted[0][0] === null) {
+    if (count($uppvoted) <= 0) {
         $statement = $pdo->query('INSERT INTO Uppvotes (user_id, post_id)
         VALUES (:userId, :postId)');
         $statement->bindparam(':userId', $userId, PDO::PARAM_STR);
@@ -31,10 +30,6 @@ if (isset($_GET['id'], $_SESSION['user'])) {
         $statement = $pdo->query('UPDATE Posts SET uppvotes = uppvotes + 1 where id = :id');
         $statement->bindparam(':id', $postId, PDO::PARAM_STR);
         $statement->execute();
-
-
-        // UPDATE Products SET Price = Price + 50 WHERE ProductID = 1
-
     }
     //Remove Uppvote
 
