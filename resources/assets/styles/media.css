@@ -58,7 +58,7 @@
     }
 
     .hamburger {
-        display: block;
+        display: inline-block;
     }
     
     nav ul{
@@ -94,5 +94,26 @@
     .hamburger-logo {
         margin-bottom: 20vh;
         font-size: 1.5rem;
+    }
+
+    .comment-container {
+        width: 80vw;
+    }
+
+    .comment-author-picture {
+        width: 75px;
+        height: 75px;
+    }
+
+    .comment-author-email {
+        font-size: .6rem;
+    }
+
+    .comment {
+        font-size: 1rem;
+    }
+
+    .link-to-edit-comment {
+        font-size: .65rem;
     }
 }

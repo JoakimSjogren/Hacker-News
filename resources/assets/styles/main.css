@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: rgb(20, 22, 27);
+    background-image: linear-gradient(to bottom right, rgb(50, 54, 66), rgb(20, 22, 27));
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -30,7 +30,7 @@ input, button {
 .posts-container {
     display: flex;
     width: 85vw;
-    background-color: rgb(35, 39, 47);
+    background-image: linear-gradient(to bottom right, #505050,#080808);
     flex-direction: column;
 }
 
@@ -51,7 +51,9 @@ a.post-link{
 .post-main-div {
     width: 85vw;
     border: 5px solid black;
+    box-shadow: 2px 4px rgb(26,23,23); 
     display: flex;
+    background-image: linear-gradient(to bottom right, #505050,#080808);
 }
 
 .post-author-div {
@@ -84,7 +86,6 @@ a.post-link{
 
 .description-container {
     display: flex;
-    border: 1px solid black;
 }
 .upvotes-text {
     font-size: 1.5rem;
@@ -97,6 +98,7 @@ a.post-link{
 
 .comment-container {
     display: flex;
+    background-image: linear-gradient(to bottom right, #505050,#080808);
 }
 
 .comment {
@@ -121,9 +123,9 @@ a.post-link{
 }
 
 .comment-container {
-    width: 85vw;
+    width: 65vw;
     border: 4px solid black;
-   
+    box-shadow: 2px 4px rgb(26,23,23); 
 }
 
 .description-container p {
@@ -153,7 +155,7 @@ a.post-link{
 .profile-container {
     width: 85vw;
     height: 70vh;
-    background-color: rgb(54, 54, 54);
+    background-image: linear-gradient(to bottom right, #505050,#080808);
     display: flex;
     border: 8px solid black;
 }
