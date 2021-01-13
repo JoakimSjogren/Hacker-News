@@ -9,8 +9,8 @@
 
 ## Testers
 
-1. 
-2. 
+1. Erik White
+2. Joacim Johansson
 
 ### Feedback by [Réka Madarász](https://github.com/mreka91)
 

@@ -4,5 +4,4 @@ const hamburgerNav = document.querySelector('.hamburger-nav');
 
 hamburger.addEventListener('click', () => {
     hamburgerNav.classList.toggle('menu-open');
-    console.log("aaa");
 });
