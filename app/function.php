@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-session_start();
+// require __DIR__ . "/autoload.php";
 
 
 function getPostsByNewest()
@@ -123,4 +123,19 @@ function checkIfPostIsUpvoted($postId)
 
         return $post[0];
     }
+}
+
+
+function getUserById(int $userId)
+{
+    $pdo = new PDO('sqlite:../app/database/hacker.sqlite');
+
+    $statement = $pdo->prepare('SELECT * from Users where id = :userId');
+    $statement->bindparam(':userId', $userId, PDO::PARAM_INT);
+    $statement->execute();
+
+
+    $post = $statement->fetchALL(PDO::FETCH_ASSOC);
+
+    return $post[0];
 }

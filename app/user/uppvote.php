@@ -1,5 +1,8 @@
 <?php
+
+declare(strict_types=1);
 session_start();
+
 
 $postId = $_GET['id'];
 if (isset($_GET['id'], $_SESSION['user'])) {

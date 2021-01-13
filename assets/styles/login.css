@@ -12,6 +12,11 @@ body {
 
 input, button {
     color: black;
+    font-size: 2rem;
+}
+
+label, span {
+    font-size: 2.8rem;
 }
 
 .login-form {
@@ -19,6 +24,11 @@ input, button {
 }
 .register-form, .login-form {
     border: 2px solid rgb(255, 255, 255);
-    border-radius: 15px;
+    border-radius: 5px;
+}
+
+.delete-comment-btn {
+    background-color: rgb(122, 31, 31);
+    
 }
 

@@ -1,12 +1,15 @@
 <?php
+
+declare(strict_types=1);
 session_start();
+
 require __DIR__ . "..//../function.php";
 
 if (isset($_GET['id'])) {
 
     $commentId = $_GET['id'];
 
-    $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);;
+    $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
 
 
 

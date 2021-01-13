@@ -2,7 +2,6 @@
 require __DIR__ . "/header.php";
 require __DIR__ . "/navigation.php";
 require __DIR__ . "/../app/function.php";
-session_start();
 
 $biography = $_SESSION['user']['biography'];
 
@@ -40,12 +39,6 @@ $biography = $_SESSION['user']['biography'];
         <a href="./changepassword.php">Change Password</a>
         <a href="./changeemail.php">Change Email</a>
     </div>
-    <div class="middle-div-profile ">
-
-    </div>
-
-
-
 
 
 </div>

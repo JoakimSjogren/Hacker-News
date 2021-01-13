@@ -1,5 +1,8 @@
 <?php
+
+declare(strict_types=1);
 session_start();
+
 if (isset($_POST['biography'])) {
     $newBiography = filter_var($_POST['biography'], FILTER_SANITIZE_STRING);
 

@@ -38,17 +38,98 @@ input, button {
     padding-top: 30vh;
 }
 
-a.post {
+.post {
     border: 5px solid black;
     display: flex;
+    
 }
 
 a.post-link{
     color:rgb(119, 194, 255);
 }
 
+.post-main-div {
+    width: 85vw;
+    border: 5px solid black;
+    display: flex;
+}
+
+.post-author-div {
+    border: 5px solid black;
+}
+
 .post-link:hover {
     color:rgb(49, 162, 255);
+}
+
+.post-author-picture {
+    width: 150px;
+    height: 150px;
+}
+
+.post-comment-container, .post-comment-container input, .post-comment-container button {
+    font-size: 1.6rem;
+}
+
+.author-post {
+   font-size: .8rem;
+   text-align: center;
+}
+
+.post-info {
+    display: flex; 
+    flex-direction: column;
+    height: 100%;
+}
+
+.description-container {
+    display: flex;
+    border: 1px solid black;
+}
+.upvotes-text {
+    font-size: 1.5rem;
+}
+.upvote-container {
+    width: 85vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-container {
+    display: flex;
+}
+
+.comment {
+    font-size: 2rem;
+}
+
+.comment-author {
+    border: 3px solid black;
+}
+
+.comment-author-picture {
+    width: 100px;
+    height: 100px;
+}
+.comment-author-email {
+    font-size: .9rem;
+}
+
+.link-to-edit-comment {
+    font-size: 1.5rem;
+    margin-left: auto;
+}
+
+.comment-container {
+    width: 85vw;
+    border: 4px solid black;
+   
+}
+
+.description-container p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(143, 143, 143);
 }
 
 .upvoted {
@@ -56,14 +137,12 @@ a.post-link{
 }
 
 .left-div-post {
-    width: 42.5;
     display: flex;
     flex-direction: column-reverse;
 }
 
 
 .right-div-post {
-    width: 42.5;
     margin-left: auto;
 }
 
@@ -71,13 +150,9 @@ a.post-link{
     font-size: 2.2rem;
 }
 
-.comment-container, .description-container {
-    width: 40vw;
-}
-
 .profile-container {
     width: 85vw;
-    height: 45vh;
+    height: 70vh;
     background-color: rgb(54, 54, 54);
     display: flex;
     border: 8px solid black;
@@ -97,8 +172,15 @@ a.post-link{
 }
 
 .like-button {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
+    
+}
+
+.post-author-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
 }
 
 
