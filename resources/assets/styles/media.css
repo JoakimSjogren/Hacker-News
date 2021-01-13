@@ -37,25 +37,62 @@
         
     }
 
-    /* nav */
-
-    nav, .posts-container {
+    .posts-container, .post-main-div {
         width: 100vw;
     }
 
-    .right-div a, .logo, a, .login-btn, .account-btn{
-        font-size: .8rem;
+    .hamburger-nav {
+        position: fixed;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(161, 64, 51);   
+        display: flex;
+        transform: translateX(100%);
+        flex-direction: column;
+        align-items: center;
     }
 
-    .right-div-post span {
-        font-size: .6rem;
+    .menu-open {
+        transform: translateX(0%);
     }
 
-    .login-btn, .account-btn { 
-        margin: 0px;
+    .hamburger {
+        display: block;
+    }
+    
+    nav ul{
+        display: none;
+    }
+    
+    .login-nav-container {
+        display: none;
     }
 
-    nav ul li {
-        margin-left: 0px;
+    nav {
+        height: 30px;
+        width: 100vw;
+    }
+
+    .logo-nav-container {
+       margin-right: auto;
+    }
+
+    .logo {
+        width: 50vw;
+        text-align: center;
+    }
+
+    .hamburger-nav ul li {
+        list-style-type: none;
+        margin-left: 5%;
+        margin-bottom: 50px;
+        text-align: center;
+        width: 80vw;
+    }
+
+    .hamburger-logo {
+        margin-bottom: 20vh;
+        font-size: 1.5rem;
     }
 }
