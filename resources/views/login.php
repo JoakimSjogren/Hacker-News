@@ -21,7 +21,7 @@ session_start();
         <span>Login</span>
         <div class="form-group">
             <label for="login-email">Email</label>
-            <input type="text" name="login-email" id="login-email" placeholder="example@email.com" required>
+            <input type="email" name="login-email" id="login-email" placeholder="example@email.com" required>
         </div>
 
         <div class="form-group">
@@ -50,7 +50,7 @@ session_start();
             <span>Create Account</span>
             <div class="form-group">
                 <label for="register-email">Email</label>
-                <input type="text" name="register-email" id="register-email" placeholder="example@email.com" required>
+                <input type="email" name="register-email" id="register-email" placeholder="example@email.com" required>
             </div>
 
             <div class="form-group">
