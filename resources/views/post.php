@@ -114,7 +114,9 @@ if (isset($_GET['id'])) {
                         $commentId = $comment['id'];
 
                         $linkToEditComment = '/views/editcomment.php?id=' . $commentId;
+                        $linkToReplyToComment = '/views/replyTocomment.php?id=' . $commentId;
                 ?>
+                        <a class="link-to-reply-to-comment" href="<?= $linkToReplyToComment ?>">Reply to comment</a>
                         <a class="link-to-edit-comment" href="<?= $linkToEditComment ?>">Edit Comment</a>
                 <?php
                     }
