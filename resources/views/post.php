@@ -7,6 +7,7 @@ if (isset($_GET['id'])) {
     $postInfo = getPostById($postId);
     $postAuthorId = $postInfo['user_id'];
     $postAuthorEmail = getUserById($postAuthorId)['email'];
+    $userId = $_SESSION['user']['id'];
 ?>
     <div class="post-main-div">
         <div class="post-author-div">
@@ -137,7 +138,9 @@ if (isset($_GET['id'])) {
             foreach ($commentComments as $commentComment) {
                 $commentCommentId = $commentComment['id'];
                 $linkToReplyToComment = '/views/replyTocomment.php?id=' . $commentCommentId . '&post-id=' . $postId;
-                $linkToSendCommentLike = '/views/sendCommentLike.php?id=' . $commentCommentId . '&post-id=' . $postId;
+                $linkToSendCommentLike = '/app/user/sendCommentLike.php?id=' . $commentCommentId . '&post-id=' . $postId;
+
+                hasLikedComment($commentCommentId, $userId, 'sqlite:../app/database/hacker.sqlite') ? $likeText = 'Unlike' : $likeText = 'Like';
             ?>
                 <div class="comment-container lvl2">
                     <div class="left">
@@ -157,7 +160,7 @@ if (isset($_GET['id'])) {
                     <div class="right">
                         <div class="comment-link-container">
                             <a class="link-to-reply-to-comment" href="<?= $linkToReplyToComment ?>">Reply to comment</a>
-                            <a class="link-to-reply-to-comment" href="<?= $linkToSendCommentLike ?>">Like</a>
+                            <a class="link-to-reply-to-comment" href="<?= $linkToSendCommentLike ?>"><?= $likeText ?></a>
                             <?php
                             if (isset($_SESSION['user'])) {
                                 if ($_SESSION['user']['id'] === $commentComment['user_id']) { // If logged in and your comment

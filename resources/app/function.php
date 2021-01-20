@@ -154,3 +154,21 @@ function getCommentsByParentId(int $parentId)
 
     return $comments;
 }
+
+function hasLikedComment(int $commentId, int $userId, string $dsn)
+{
+    $pdo = new PDO($dsn);
+
+    $statement = $pdo->prepare('SELECT * FROM Comment_upvotes WHERE comment_id = :comment_id AND user_id = :user_id');
+    $statement->bindparam(':comment_id', $commentId, PDO::PARAM_INT);
+    $statement->bindparam(':user_id', $userId, PDO::PARAM_INT);
+    $statement->execute();
+
+    $likes = $statement->fetchALL(PDO::FETCH_ASSOC);
+
+    if (isset($likes[0])) {
+        return true;
+    } else {
+        return false;
+    }
+}
