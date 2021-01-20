@@ -141,3 +141,16 @@ function getUserById(int $userId)
 
     return $post[0];
 }
+
+function getCommentsByParentId(int $parentId)
+{
+    $pdo = new PDO('sqlite:../app/database/hacker.sqlite');
+
+    $statement = $pdo->prepare('SELECT * from Comments where parent_comment = :parentId');
+    $statement->bindparam(':parentId', $parentId, PDO::PARAM_INT);
+    $statement->execute();
+
+    $comments = $statement->fetchALL(PDO::FETCH_ASSOC);
+
+    return $comments;
+}

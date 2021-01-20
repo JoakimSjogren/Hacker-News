@@ -11,6 +11,8 @@ if (isset($_GET['id'])) {
 
     $content = filter_var($_POST['content'], FILTER_SANITIZE_STRING);
 
+    $postId = $_GET['post-id'];
+
 
 
     $pdo = new PDO('sqlite:../database/hacker.sqlite');
@@ -21,7 +23,6 @@ if (isset($_GET['id'])) {
 
 
     $commentInfo = $statement->fetchALL(PDO::FETCH_ASSOC);
-    $postId = $commentInfo[0]['post_id'];
 
     //check if logged in user posted the comment
     if ($_SESSION['user']['id'] === $commentInfo[0]['user_id']) {

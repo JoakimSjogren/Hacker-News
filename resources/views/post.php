@@ -77,7 +77,7 @@ if (isset($_GET['id'])) {
 
     <div class="post-comment-container">
         <?php
-        $linkToComment = '/app/user/postcomment.php?id=' . $postId;
+        $linkToComment = '/app/user/postcomment.php?id=' . $postId . '&post-id=' . $postId;
         ?>
         <form action="<?= $linkToComment ?>" . method="post">
             <div class="form-group">
@@ -89,41 +89,132 @@ if (isset($_GET['id'])) {
         </form>
     </div>
     <!-- Comments -->
+
     <div class="comment-section">
         <?php
+        //Lvl 1 responses
         $comments = getCommentsByPostId($postId);
         foreach ($comments as $comment) {
+            $commentId = $comment['id'];
+            $linkToReplyToComment = '/views/replyTocomment.php?id=' . $commentId . '&post-id=' . $postId;
         ?>
             <div class="comment-container">
-                <div class="comment-author">
-                    <?php
-                    $commentAuthorId = $comment['user_id'];
-                    $commentAuthorEmail = getUserById($commentAuthorId)['email'];
-                    $src = findImageById($commentAuthorId);
-                    echo '<img class="comment-author-picture" src="' . $src . '">';
-                    ?>
-                    <h3 class="comment-author-email"><?= $commentAuthorEmail ?></h3>
+                <div class="left">
+
+                    <div class="comment-author">
+                        <?php
+                        $commentAuthorId = $comment['user_id'];
+                        $commentAuthorEmail = getUserById($commentAuthorId)['email'];
+                        $src = findImageById($commentAuthorId);
+                        echo '<img class="comment-author-picture" src="' . $src . '">';
+                        ?>
+                        <h3 class="comment-author-email"><?= $commentAuthorEmail ?></h3>
+                    </div>
+                    <p class="comment">
+                        <?= $comment['content']; ?>
+                    </p>
                 </div>
-                <p class="comment">
-                    <?= $comment['content']; ?>
-                </p>
-                <?php
-                if (isset($_SESSION['user'])) {
-                    if ($_SESSION['user']['id'] === $comment['user_id']) {
-
-                        $commentId = $comment['id'];
-
-                        $linkToEditComment = '/views/editcomment.php?id=' . $commentId;
-                        $linkToReplyToComment = '/views/replyTocomment.php?id=' . $commentId;
-                ?>
+                <div class="right">
+                    <div class="comment-link-container">
                         <a class="link-to-reply-to-comment" href="<?= $linkToReplyToComment ?>">Reply to comment</a>
-                        <a class="link-to-edit-comment" href="<?= $linkToEditComment ?>">Edit Comment</a>
-                <?php
-                    }
-                }
-                ?>
-
+                        <?php
+                        if (isset($_SESSION['user'])) {
+                            if ($_SESSION['user']['id'] === $comment['user_id']) { // If logged in and your comment
+                                $linkToEditComment = '/views/editcomment.php?id=' . $commentId . '&post-id=' . $postId;
+                        ?>
+                                <a class="link-to-edit-comment" href="<?= $linkToEditComment ?>">Edit Comment</a>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
             </div>
+            <?php
+            // Lvl 2 responses
+            $commentComments = getCommentsByParentId($commentId);
+
+            foreach ($commentComments as $commentComment) {
+                $commentCommentId = $commentComment['id'];
+                $linkToReplyToComment = '/views/replyTocomment.php?id=' . $commentCommentId . '&post-id=' . $postId;
+                $linkToSendCommentLike = '/views/sendCommentLike.php?id=' . $commentCommentId . '&post-id=' . $postId;
+            ?>
+                <div class="comment-container lvl2">
+                    <div class="left">
+                        <div class="comment-author">
+                            <?php
+                            $commentAuthorId = $commentComment['user_id'];
+                            $commentAuthorEmail = getUserById($commentAuthorId)['email'];
+                            $src = findImageById($commentAuthorId);
+                            echo '<img class="comment-author-picture" src="' . $src . '">';
+                            ?>
+                            <h3 class="comment-author-email"><?= $commentAuthorEmail ?></h3>
+                        </div>
+                        <p class="comment">
+                            <?= $commentComment['content']; ?>
+                        </p>
+                    </div>
+                    <div class="right">
+                        <div class="comment-link-container">
+                            <a class="link-to-reply-to-comment" href="<?= $linkToReplyToComment ?>">Reply to comment</a>
+                            <a class="link-to-reply-to-comment" href="<?= $linkToSendCommentLike ?>">Like</a>
+                            <?php
+                            if (isset($_SESSION['user'])) {
+                                if ($_SESSION['user']['id'] === $commentComment['user_id']) { // If logged in and your comment
+                                    $linkToEditComment = '/views/editcomment.php?id=' . $commentCommentId . '&post-id=' . $postId;
+                            ?>
+                                    <a class="link-to-edit-comment" href="<?= $linkToEditComment ?>">Edit Comment</a>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                // Lvl 3 responses
+                $commentCommentComments = getCommentsByParentId($commentCommentId);
+
+                foreach ($commentCommentComments as $commentCommentComment) {
+                    $commentCommentCommentId = $commentCommentComment['id'];
+                    $linkToReplyToComment = '/views/replyTocomment.php?id=' . $commentCommentCommentId . '&post-id=' . $postId;
+                ?>
+                    <div class="comment-container lvl3">
+                        <div class="left">
+                            <div class="comment-author">
+                                <?php
+                                $commentAuthorId = $commentCommentComment['user_id'];
+                                $commentAuthorEmail = getUserById($commentAuthorId)['email'];
+                                $src = findImageById($commentAuthorId);
+                                echo '<img class="comment-author-picture" src="' . $src . '">';
+                                ?>
+                                <h3 class="comment-author-email"><?= $commentAuthorEmail ?></h3>
+                            </div>
+                            <p class="comment">
+                                <?= $commentCommentComment['content']; ?>
+                            </p>
+                        </div>
+                        <div class="right">
+                            <div class="comment-link-container">
+                                <?php
+                                if (isset($_SESSION['user'])) {
+                                    if ($_SESSION['user']['id'] === $commentCommentComment['user_id']) { // If logged in and your comment
+                                        $linkToEditComment = '/views/editcomment.php?id=' . $commentCommentCommentId . '&post-id=' . $postId;
+                                ?>
+                                        <a class="link-to-edit-comment" href="<?= $linkToEditComment ?>">Edit Comment</a>
+                                <?php
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+            <?php
+                    // Lvl 3 responses
+                }
+            }
+
+            ?>
     </div>
 <?php
         }

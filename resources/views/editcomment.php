@@ -26,6 +26,8 @@ session_start();
 
         $commentAuthorId = $commentInfo['user_id'];
 
+        $postId = $_GET['post-id'];
+
 
 
 
@@ -37,11 +39,12 @@ session_start();
             $content = $commentInfo['content'];
 
 
-            $linkToEditComment = '../app/user/editcomment.php?id=' . $commentId;
-            $linkToDeleteComment = '../app/user/deletecomment.php?id=' . $commentId;
+            $linkToEditComment = '../app/user/editcomment.php?id=' . $commentId . '&post-id=' . $postId;
+            $linkToDeleteComment = '../app/user/deletecomment.php?id=' . $commentId . '&post-id=' . $postId;
     ?>
             <form action="<?= $linkToDeleteComment ?>" method="post">
                 <button class="delete-comment-btn" type="submit">Delete Comment</button>
+                <input value="<?= $postId ?>" type="hidden" name="post-id" id="post-id" required>
             </form>
             <!-- Submit form -->
             <form action="<?= $linkToEditComment ?>" method="post">
@@ -49,6 +52,8 @@ session_start();
                 <div class="form-group">
                     <label for="content">Comment</label>
                     <input value="<?= $content ?>" type="content" name="content" id="content" required>
+                    <input value="<?= $postId ?>" type="hidden" name="post-id" id="post-id" required>
+
                 </div>
                 <button type="submit">Update Comment</button>
             </form>
