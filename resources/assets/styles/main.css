@@ -1,229 +1,257 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-image: linear-gradient(to bottom right, rgb(50, 54, 66), rgb(20, 22, 27));
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(50, 54, 66),
+    rgb(20, 22, 27)
+  );
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
 
-a:hover, .logo:hover {
-    color: rgb(119, 194, 255);
+a:hover,
+.logo:hover {
+  color: rgb(119, 194, 255);
 }
 
-input, button {
-    color: black;
+input,
+button {
+  color: black;
 }
 
 .posts-container {
-    display: flex;
-    width: 85vw;
-    background-image: linear-gradient(to bottom right, #505050,#080808);
-    flex-direction: column;
+  display: flex;
+  width: 85vw;
+  background-image: linear-gradient(to bottom right, #505050, #080808);
+  flex-direction: column;
 }
 
 .post-submit-form {
-    padding-top: 30vh;
+  padding-top: 30vh;
 }
 
 .post {
-    border: 5px solid black;
-    display: flex;
-    
+  border: 5px solid black;
+  display: flex;
 }
 
-a.post-link{
-    color:rgb(119, 194, 255);
+a.post-link {
+  color: rgb(119, 194, 255);
 }
 
 .post-main-div {
-    width: 85vw;
-    border: 5px solid black;
-    box-shadow: 2px 4px rgb(26,23,23); 
-    display: flex;
-    background-image: linear-gradient(to bottom right, #505050,#080808);
+  width: 85vw;
+  border: 5px solid black;
+  box-shadow: 2px 4px rgb(26, 23, 23);
+  display: flex;
+  background-image: linear-gradient(to bottom right, #505050, #080808);
 }
 
 .post-author-div {
-    border: 5px solid black;
+  border: 5px solid black;
 }
 
 .post-link:hover {
-    color:rgb(49, 162, 255);
+  color: rgb(49, 162, 255);
 }
 
 .post-author-picture {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
-.post-comment-container, .post-comment-container input, .post-comment-container button {
-    font-size: 1.6rem;
+.post-comment-container,
+.post-comment-container input,
+.post-comment-container button {
+  font-size: 1.6rem;
 }
 
 .author-post {
-   font-size: .8rem;
-   text-align: center;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .post-info {
-    display: flex; 
-    flex-direction: column;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .description-container {
-    display: flex;
+  display: flex;
 }
 .upvotes-text {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 .upvote-container {
-    width: 85vw;
-    display: flex;
-    justify-content: flex-end;
+  width: 85vw;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .comment-container {
-    display: flex;
-    background-image: linear-gradient(to bottom right, #505050,#080808);
+  display: flex;
+  background-image: linear-gradient(to bottom right, #505050, #080808);
 }
 
 .comment {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .comment-author {
-    border: 3px solid black;
+  border: 3px solid black;
 }
 
 .comment-author-picture {
-    width: 125px;
-    height: 125px;
+  width: 125px;
+  height: 125px;
 }
 .comment-author-email {
-    font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .link-to-edit-comment {
-    font-size: 1.5rem;
-    margin-left: auto;
+  font-size: 1.5rem;
+  margin-left: auto;
+}
+
+.link-to-reply-to-comment {
+  font-size: 1.5rem;
+  margin-left: auto;
 }
 
 .comment-container {
-    width: 65vw;
-    border: 4px solid black;
-    box-shadow: 2px 4px rgb(26,23,23); 
+  width: 65vw;
+  border: 4px solid black;
+  box-shadow: 2px 4px rgb(26, 23, 23);
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+}
+
+.comment-container .left {
+  display: flex;
 }
 
 .description-container p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: rgb(143, 143, 143);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(143, 143, 143);
+}
+
+.lvl2 {
+  margin-left: 2rem;
+}
+
+.lvl3 {
+  margin-left: 4rem;
 }
 
 .upvoted {
-    background-color: cornflowerblue;
+  background-color: cornflowerblue;
 }
 
 .left-div-post {
-    display: flex;
-    flex-direction: column-reverse;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
-
 .right-div-post {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .right-div-post span {
-    font-size: 2.2rem;
+  font-size: 2.2rem;
 }
 
 .profile-container {
-    width: 85vw;
-    height: 70vh;
-    background-image: linear-gradient(to bottom right, #505050,#080808);
-    display: flex;
-    border: 8px solid black;
+  width: 85vw;
+  height: 70vh;
+  background-image: linear-gradient(to bottom right, #505050, #080808);
+  display: flex;
+  border: 8px solid black;
 }
 
-.biography-form span, .biography-form button, .biography{
-    font-size: 1.4rem;
+.biography-form span,
+.biography-form button,
+.biography {
+  font-size: 1.4rem;
 }
 
-.avatar-form input, .avatar-form label, .avatar-form button{
-    font-size: 1.4rem;
+.avatar-form input,
+.avatar-form label,
+.avatar-form button {
+  font-size: 1.4rem;
 }
 
 .profile-picture {
-    width: 250px;
-    height: 250px;
+  width: 250px;
+  height: 250px;
 }
 
 .like-button {
-    width: 50px;
-    height: 50px;
-    
+  width: 50px;
+  height: 50px;
 }
 
 .post-author-info {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
 }
 
-
 .post-comment-container {
-    margin: 50px 0px;
+  margin: 50px 0px;
 }
 
 .profile-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-email {
-    margin-bottom: 2vh;
-    font-size: 1.5rem;
+  margin-bottom: 2vh;
+  font-size: 1.5rem;
 }
 
-.right-div a, .logo{
-    font-size: 2.4rem;
+.right-div a,
+.logo {
+  font-size: 2.4rem;
 }
 
 .left-div-profile {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .right-div-profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: auto;
-    align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  align-self: flex-start;
 }
 
-
-.right-div-profile a{
-    color:rgb(119, 194, 255);
-    font-size: 1.6rem;
-} 
+.right-div-profile a {
+  color: rgb(119, 194, 255);
+  font-size: 1.6rem;
+}
 
 .right-div-profile a:hover {
-    color:rgb(49, 162, 255);
-    font-size: 1.6rem;
-} 
+  color: rgb(49, 162, 255);
+  font-size: 1.6rem;
+}

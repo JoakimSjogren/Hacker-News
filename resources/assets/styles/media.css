@@ -1,131 +1,139 @@
 @media screen and (max-width: 1500px) {
+  .right-div a,
+  .logo,
+  a,
+  .login-btn,
+  .account-btn {
+    font-size: 1.4rem;
+  }
 
-   
-    .right-div a, .logo, a, .login-btn, .account-btn{
-        font-size: 1.4rem;
-    }
+  .right-div-post span {
+    font-size: 1.2rem;
+  }
 
-    .right-div-post span {
-        font-size: 1.2rem;
-    }
-
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-    }
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+  }
 }
 
-@media screen and (max-width: 900px) { 
-    /* Post page */
-    .post-author-picture {
-        width: 75px;
-        height: 75px;
-    }
+@media screen and (max-width: 900px) {
+  /* Post page */
+  .post-author-picture {
+    width: 75px;
+    height: 75px;
+  }
 
-    .author-post {
-        font-size: .6rem;
-        text-align: center;
-     }
+  .author-post {
+    font-size: 0.6rem;
+    text-align: center;
+  }
 
-    .post-comment-container, .post-comment-container input, .post-comment-container button {
-        font-size: 1.2rem;
-    }
+  .post-comment-container,
+  .post-comment-container input,
+  .post-comment-container button {
+    font-size: 1.2rem;
+  }
 
-    .like-button {
-        width: 25px;
-        height: 25px;
-        
-    }
+  .like-button {
+    width: 25px;
+    height: 25px;
+  }
 
-    .posts-container, .post-main-div {
-        width: 100vw;
-    }
+  .posts-container,
+  .post-main-div {
+    width: 100vw;
+  }
 
-    .hamburger-nav {
-        position: fixed;
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgb(161, 64, 51);   
-        display: flex;
-        transform: translateX(100%);
-        flex-direction: column;
-        align-items: center;
-    }
+  .hamburger-nav {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(161, 64, 51);
+    display: flex;
+    transform: translateX(100%);
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .menu-open {
-        transform: translateX(0%);
-    }
+  .menu-open {
+    transform: translateX(0%);
+  }
 
-    .hamburger {
-        display: inline-block;
-    }
-    
-    nav ul{
-        display: none;
-    }
-    
-    .login-nav-container {
-        display: none;
-    }
+  .hamburger {
+    display: inline-block;
+  }
 
-    nav {
-        height: 30px;
-        width: 100vw;
-    }
+  nav ul {
+    display: none;
+  }
 
-    .logo-nav-container {
-       margin-right: auto;
-    }
+  .login-nav-container {
+    display: none;
+  }
 
-    .logo {
-        width: 50vw;
-        text-align: center;
-    }
+  nav {
+    height: 30px;
+    width: 100vw;
+  }
 
-    .hamburger-nav ul li {
-        list-style-type: none;
-        margin-left: 5%;
-        margin-bottom: 50px;
-        text-align: center;
-        width: 80vw;
-    }
+  .logo-nav-container {
+    margin-right: auto;
+  }
 
-    .hamburger-logo {
-        margin-bottom: 20vh;
-        font-size: 1.5rem;
-    }
+  .logo {
+    width: 50vw;
+    text-align: center;
+  }
 
-    .comment-container {
-        width: 80vw;
-    }
+  .hamburger-nav ul li {
+    list-style-type: none;
+    margin-left: 5%;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 80vw;
+  }
 
-    .comment-author-picture {
-        width: 75px;
-        height: 75px;
-    }
+  .hamburger-logo {
+    margin-bottom: 20vh;
+    font-size: 1.5rem;
+  }
 
-    .comment-author-email {
-        font-size: .6rem;
-    }
+  .comment-container {
+    width: 80vw;
+  }
 
-    .comment {
-        font-size: 1rem;
-    }
+  .comment-author-picture {
+    width: 75px;
+    height: 75px;
+  }
 
-    .link-to-edit-comment {
-        font-size: .65rem;
-    }
+  .comment-author-email {
+    font-size: 0.6rem;
+  }
 
-    .post-author-info a {
-        font-size: .8rem;
-    }
+  .comment {
+    font-size: 1rem;
+  }
 
-    .profile-container {
-        width: 100vw; 
-    }
+  .link-to-edit-comment {
+    font-size: 0.65rem;
+  }
 
-    .right-div-profile {
-        margin-left: 0;
-    }
+  .link-to-reply-to-comment {
+    font-size: 0.65rem;
+  }
+
+  .post-author-info a {
+    font-size: 0.8rem;
+  }
+
+  .profile-container {
+    width: 100vw;
+  }
+
+  .right-div-profile {
+    margin-left: 0;
+  }
 }

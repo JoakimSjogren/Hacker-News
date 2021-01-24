@@ -8,6 +8,7 @@ require __DIR__ . "..//../function.php";
 if (isset($_GET['id'])) {
 
     $commentId = $_GET['id'];
+    $postId = $_GET['post-id'];
 
 
     $pdo = new PDO('sqlite:../database/hacker.sqlite');
@@ -18,8 +19,6 @@ if (isset($_GET['id'])) {
 
 
     $commentInfo = $statement->fetchALL(PDO::FETCH_ASSOC);
-    $postId = $commentInfo[0]['post_id'];
-
 
     //check if logged in user posted the comment
     if ($_SESSION['user']['id'] === $commentInfo[0]['user_id']) {
