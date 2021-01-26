@@ -30,3 +30,8 @@
 14. consider using alternative syntax for control structures and don't forget to end your if statements
 15. css is easy to follow, nice that you broke them up in different files
 16. it is easy to understand what the functions do by their name, but maybe consider commenting what are they for
+
+## Added Features
+* As a user I'm able to reply to comments.
+* As a user I'm able to upvote and remove upvote on comments. 
+* Link to pull request: https://github.com/JoakimSjogren/Hacker-News/pull/2
