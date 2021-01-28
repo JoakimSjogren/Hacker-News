@@ -1,12 +1,12 @@
 <?php
 
 declare(strict_types=1);
+
 session_start();
 
 
 $postId = $_GET['id'];
 if (isset($_GET['id'], $_SESSION['user'])) {
-
     $userId = $_SESSION['user']['id'];
 
 
@@ -31,6 +31,7 @@ if (isset($_GET['id'], $_SESSION['user'])) {
         $statement->bindparam(':id', $postId, PDO::PARAM_STR);
         $statement->execute();
     }
+    
     //Remove Uppvote
 
     else {

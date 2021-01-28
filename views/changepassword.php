@@ -21,7 +21,7 @@ session_start();
     <?php
 
     if (isset($_SESSION['user'])) {
-    ?>
+        ?>
         <form action="/app/user/changepassword.php" method="post">
             <div class="form-group">
                 <label for="oldpassword">Old password</label>
@@ -35,6 +35,6 @@ session_start();
             </div>
             <button type="submit">Reset password</button>
         </form>
-    <?php
+        <?php
     }
     ?>

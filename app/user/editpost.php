@@ -1,12 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 session_start();
 
 require __DIR__ . "..//../function.php";
-
 if (isset($_GET['id'])) {
-
     $postId = $_GET['id'];
 
     $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);

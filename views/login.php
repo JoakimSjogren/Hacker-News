@@ -36,13 +36,13 @@ session_start();
         <!-- register -->
         <?php
         if (isset($_SESSION['error'])) {
-        ?>
+            ?>
             <p class="error"> <?php echo ($_SESSION['error']);   ?> </p>
             <?php
             unset($_SESSION['error']);
 
             ?>
-        <?php
+            <?php
         }
 
         ?>

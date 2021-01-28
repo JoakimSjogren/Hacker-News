@@ -21,7 +21,7 @@ session_start();
     <?php
 
     if (isset($_SESSION['user'])) {
-    ?>
+        ?>
         <form action="/app/user/changeemail.php" method="post">
             <div class="form-group">
                 <label for="newemail">New Email</label>
@@ -33,6 +33,6 @@ session_start();
             </div>
             <button type="submit">Set new email</button>
         </form>
-    <?php
+        <?php
     }
     ?>

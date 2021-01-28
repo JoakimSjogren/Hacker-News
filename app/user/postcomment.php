@@ -1,11 +1,11 @@
 <?php
 
 declare(strict_types=1);
+
 session_start();
 if (isset($_POST['comment'], $_GET['id'])) {
     $postId = $_GET['id'];
     if (isset($_SESSION['user'])) {
-
         $content = filter_var($_POST['comment'], FILTER_SANITIZE_STRING);
         $userId = $_SESSION['user']['id'];
 

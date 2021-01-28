@@ -19,8 +19,6 @@ if (isset($_POST['login-email'], $_POST['login-password'])) {
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
     if (isset($user['password']) && password_verify($password, $user['password'])) {
-
-
         $_SESSION['user'] = $user;
 
         header("Location: /index.php");

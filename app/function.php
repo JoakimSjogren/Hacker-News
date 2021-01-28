@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 function getPostsByNewest()
 {
 
@@ -78,7 +77,6 @@ function findImageById($id)
 
     $image = "..//./app/database/profileimages/$id.png";
     if (file_exists($image)) {
-
         $imageData = base64_encode(file_get_contents($image));
         $src = 'data: ' . mime_content_type($image) . ';base64,' . $imageData;
     } else {

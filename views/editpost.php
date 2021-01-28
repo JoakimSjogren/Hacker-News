@@ -34,7 +34,7 @@ session_start();
             $link = $postInfo['link'];
 
             $linkToEditPost = '../app/user/editpost.php?id=' . $postId;
-    ?>
+            ?>
             <!-- Submit form -->
             <form action="<?= $linkToEditPost ?>" method="post">
                 <span>Submit a post</span>
@@ -56,8 +56,7 @@ session_start();
             </form>
 
 
-    <?php
-
+            <?php
         } else {
             header("Location: /index.php");
         }

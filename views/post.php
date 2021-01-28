@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
     if (isset($_SESSION['user'])) {
         $userId = $_SESSION['user']['id'];
     }
-?>
+    ?>
     <div class="post-main-div">
         <div class="post-author-div">
             <?php
@@ -43,10 +43,10 @@ if (isset($_GET['id'])) {
                 if ($_SESSION['user']['id'] === $postInfo['user_id']) {
                     $linkToRemovePost = '/app/user/removepost.php?id=' . $postId;
                     $linkToEditPost = '/views/editpost.php?id=' . $postId;
-            ?>
+                   ?>
                     <a href="<?= $linkToRemovePost ?>">Remove Post</a>
                     <a href="<?= $linkToEditPost ?>">Edit Post</a>
-            <?php
+                    <?php
                 }
             }
             ?>
@@ -60,19 +60,19 @@ if (isset($_GET['id'])) {
         $hasUpvotedPost = checkIfPostIsUpvoted($postId);
 
         if (!$hasUpvotedPost) {
-        ?>
+            ?>
             <form action="<?= $linkToUppvote ?>" method="post">
                 <span class="upvotes-text">Upvotes:</span>
                 <button class="like-button" type="submit"><?= $totalUppvotes['uppvotes'] ?></button>
             </form>
-        <?php
+            <?php
         } else {
-        ?>
+            ?>
             <form action="<?= $linkToUppvote ?>" method="post">
                 <span class="upvotes-text">Upvotes:</span>
                 <button class="like-button upvoted" type="submit"><?= $totalUppvotes['uppvotes'] ?></button>
             </form>
-        <?php
+            <?php
         }
         ?>
     </div>
@@ -105,7 +105,7 @@ if (isset($_GET['id'])) {
             if (isset($_SESSION['user'])) {
                 hasLikedComment($commentId, $userId, 'sqlite:../app/database/hacker.sqlite') ? $likeText = 'Unlike' : $likeText = 'Like';
             }
-        ?>
+            ?>
             <div class="comment-container">
                 <div class="left">
                     <div class="comment-author">
@@ -128,10 +128,10 @@ if (isset($_GET['id'])) {
                         if (isset($_SESSION['user'])) {
                             if ($_SESSION['user']['id'] === $comment['user_id']) { // If logged in and your comment
                                 $linkToEditComment = '/views/editcomment.php?id=' . $commentId . '&post-id=' . $postId;
-                        ?>
+                                ?>
                                 <a class="link-to-reply-to-comment" href="<?= $linkToSendCommentLike ?>"><?= $likeText ?></a>
                                 <a class="link-to-edit-comment" href="<?= $linkToEditComment ?>">Edit Comment</a>
-                        <?php
+                                <?php
                             }
                         }
                         ?>
@@ -150,7 +150,7 @@ if (isset($_GET['id'])) {
                 if (isset($_SESSION['user'])) {
                     hasLikedComment($commentCommentId, $userId, 'sqlite:../app/database/hacker.sqlite') ? $likeText = 'Unlike' : $likeText = 'Like';
                 }
-            ?>
+                ?>
                 <div class="comment-container lvl2">
                     <div class="left">
                         <div class="comment-author">
@@ -173,10 +173,10 @@ if (isset($_GET['id'])) {
                             if (isset($_SESSION['user'])) {
                                 if ($_SESSION['user']['id'] === $commentComment['user_id']) { // If logged in and your comment
                                     $linkToEditComment = '/views/editcomment.php?id=' . $commentCommentId . '&post-id=' . $postId;
-                            ?>
+                                    ?>
                                     <a class="link-to-reply-to-comment" href="<?= $linkToSendCommentLike ?>"><?= $likeText ?></a>
                                     <a class="link-to-edit-comment" href="<?= $linkToEditComment ?>">Edit Comment</a>
-                            <?php
+                                    <?php
                                 }
                             }
                             ?>
@@ -195,7 +195,7 @@ if (isset($_GET['id'])) {
                     if (isset($_SESSION['user'])) {
                         hasLikedComment($commentCommentCommentId, $userId, 'sqlite:../app/database/hacker.sqlite') ? $likeText = 'Unlike' : $likeText = 'Like';
                     }
-                ?>
+                    ?>
                     <div class="comment-container lvl3">
                         <div class="left">
                             <div class="comment-author">
@@ -217,23 +217,23 @@ if (isset($_GET['id'])) {
                                 if (isset($_SESSION['user'])) {
                                     if ($_SESSION['user']['id'] === $commentCommentComment['user_id']) { // If logged in and your comment
                                         $linkToEditComment = '/views/editcomment.php?id=' . $commentCommentCommentId . '&post-id=' . $postId;
-                                ?>
+                                        ?>
                                         <a class="link-to-reply-to-comment" href="<?= $linkToSendCommentLike ?>"><?= $likeText ?></a>
                                         <a class="link-to-edit-comment" href="<?= $linkToEditComment ?>">Edit Comment</a>
-                                <?php
+                                        <?php
                                     }
                                 }
                                 ?>
                             </div>
                         </div>
                     </div>
-            <?php
+                    <?php
                     // Lvl 3 responses
                 }
             }
 
             ?>
     </div>
-<?php
+            <?php
         }
-    }
+}

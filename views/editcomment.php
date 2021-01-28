@@ -28,13 +28,7 @@ session_start();
 
         $postId = $_GET['post-id'];
 
-
-
-
-
         if ($commentAuthorId === $_SESSION['user']['id']) {
-
-
 
             $content = $commentInfo['content'];
 

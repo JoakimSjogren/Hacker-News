@@ -19,8 +19,8 @@ require __DIR__ . "/app/function.php";
 
     $postCount = count($posts);
     for ($i = 0; $i < $postCount; $i++) {
-      $linkToPost =  '/views/post.php?id=' . $posts[$i]['id'];
-    ?>
+        $linkToPost =  '/views/post.php?id=' . $posts[$i]['id'];
+        ?>
       <div class='post'>
 
         <a href=<?php echo $linkToPost ?>>
@@ -40,7 +40,7 @@ require __DIR__ . "/app/function.php";
         </p>
       </div>
 
-    <?php
+        <?php
     }
     ?>
   </div>
