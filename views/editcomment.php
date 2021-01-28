@@ -53,7 +53,6 @@ session_start();
             </form>
             <?php
         }
-
         else {
             header("Location: /index.php");
         }

@@ -20,7 +20,6 @@ if (hasLikedComment($commentId, $userId, 'sqlite:../database/hacker.sqlite')) { 
 
     header("Location: /views/post.php?id=$postId");
 }
-
 else {
     $stmt = $pdo->prepare("INSERT INTO Comment_upvotes (comment_id, user_id) VALUES(:comment_id, :user_id)");
     $stmt->bindParam(':comment_id', $commentId);
