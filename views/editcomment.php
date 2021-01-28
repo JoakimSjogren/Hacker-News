@@ -52,8 +52,7 @@ session_start();
                 <button type="submit">Update Comment</button>
             </form>
             <?php
-        }
-        else {
+        } else {
             header("Location: /index.php");
         }
     }

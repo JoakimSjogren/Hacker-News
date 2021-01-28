@@ -45,8 +45,7 @@ require __DIR__ . "/../app/autoload.php";
                 ?>
                 <a href="/app/user/logout.php" class="login-btn">Logout</a>
                 <?php
-            }
-            else {
+            } else {
                 ?>
                 <a href="/views/login.php" class="login-btn">Login</a>
                 <?php
@@ -83,12 +82,11 @@ require __DIR__ . "/../app/autoload.php";
                     ?>
                     <li> <a href="/views/profile.php" class="hamburger-account-btn">Account</a> </li>
                     <?php
-                    }
+                }
                 ?>
                 <li> <a href="/app/user/logout.php" class="hamburger-login-btn">Logout</a> </li>
                 <?php
-            }
-            else {
+            } else {
                 ?>
                 <li> <a href="/views/login.php" class="hamburger-login-btn">Login</a> </li>
                 <?php
