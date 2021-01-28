@@ -22,7 +22,6 @@ if (hasLikedComment($commentId, $userId, 'sqlite:../database/hacker.sqlite')) { 
 }
 
 else {
-    //Send like
     $stmt = $pdo->prepare("INSERT INTO Comment_upvotes (comment_id, user_id) VALUES(:comment_id, :user_id)");
     $stmt->bindParam(':comment_id', $commentId);
     $stmt->bindParam(':user_id', $userId);
