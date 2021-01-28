@@ -41,11 +41,12 @@ require __DIR__ . "/../app/autoload.php";
                     ?>
                     <a href="/views/profile.php" class="account-btn">Account</a>
                     <?php
-                    }
-                    ?>
+                        }
+                        ?>
                 <a href="/app/user/logout.php" class="login-btn">Logout</a>
                 <?php
-            } 
+            }
+
             else {
                 ?>
                 <a href="/views/login.php" class="login-btn">Login</a>
@@ -74,7 +75,7 @@ require __DIR__ . "/../app/autoload.php";
             <li><a href="/views/submit.php">Submit</a></li>
 
             <?php
-        if (isset($_SESSION['user'])) {
+            if (isset($_SESSION['user'])) {
                 if (isset($_SESSION['user']['email'])) {
                     ?>
                     <li> <a href="/views/profile.php" class="hamburger-account-btn"><?php echo $_SESSION['user']['email'] ?></a> </li>
@@ -83,11 +84,13 @@ require __DIR__ . "/../app/autoload.php";
                     ?>
                     <li> <a href="/views/profile.php" class="hamburger-account-btn">Account</a> </li>
                     <?php
-                }
-                ?>
+                    }
+                    ?>
                 <li> <a href="/app/user/logout.php" class="hamburger-login-btn">Logout</a> </li>
                 <?php
-            } else {
+            } 
+            
+            else {
                 ?>
                 <li> <a href="/views/login.php" class="hamburger-login-btn">Login</a> </li>
                 <?php

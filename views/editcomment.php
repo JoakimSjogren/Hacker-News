@@ -35,7 +35,7 @@ session_start();
 
             $linkToEditComment = '../app/user/editcomment.php?id=' . $commentId . '&post-id=' . $postId;
             $linkToDeleteComment = '../app/user/deletecomment.php?id=' . $commentId . '&post-id=' . $postId;
-    ?>
+            ?>
             <form action="<?= $linkToDeleteComment ?>" method="post">
                 <button class="delete-comment-btn" type="submit">Delete Comment</button>
                 <input value="<?= $postId ?>" type="hidden" name="post-id" id="post-id" required>
@@ -51,11 +51,9 @@ session_start();
                 </div>
                 <button type="submit">Update Comment</button>
             </form>
-
-
-    <?php
-
-        } 
+            <?php
+        }
+        
         else {
             header("Location: /index.php");
         }
