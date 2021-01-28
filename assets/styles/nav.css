@@ -1,7 +1,7 @@
 nav {
     width: 85vw;
     height: 60px;
-    background-image: linear-gradient(to bottom right, #801f1f,rgb(161, 64, 51));   
+    background-image: linear-gradient(to bottom right, #801f1f,rgb(161, 64, 51));
     display: flex;
     justify-content: center;
 }
@@ -47,7 +47,7 @@ a {
 }
 
 .hamburger-nav {
-    display: none;  
+    display: none;
 }
 
 .hamburger-row {

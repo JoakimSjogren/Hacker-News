@@ -27,8 +27,6 @@ session_start();
 
 
         if ($postAuthorId === $_SESSION['user']['id']) {
-
-
             $title = $postInfo['title'];
             $description = $postInfo['description'];
             $link = $postInfo['link'];

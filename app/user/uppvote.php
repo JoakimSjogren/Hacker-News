@@ -31,9 +31,6 @@ if (isset($_GET['id'], $_SESSION['user'])) {
         $statement->bindparam(':id', $postId, PDO::PARAM_STR);
         $statement->execute();
     }
-    
-    //Remove Uppvote
-
     else {
         $statement = $pdo->query('DELETE FROM Uppvotes WHERE user_id = :userId and post_id = :postId');
         $statement->bindparam(':userId', $userId, PDO::PARAM_STR);

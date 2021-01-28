@@ -43,7 +43,7 @@ if (isset($_GET['id'])) {
                 if ($_SESSION['user']['id'] === $postInfo['user_id']) {
                     $linkToRemovePost = '/app/user/removepost.php?id=' . $postId;
                     $linkToEditPost = '/views/editpost.php?id=' . $postId;
-                   ?>
+                    ?>
                     <a href="<?= $linkToRemovePost ?>">Remove Post</a>
                     <a href="<?= $linkToEditPost ?>">Edit Post</a>
                     <?php

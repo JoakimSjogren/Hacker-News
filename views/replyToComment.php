@@ -72,8 +72,8 @@ session_start();
                 </div>
                 <button type="submit">Send reply</button>
             </form>
-    <?php 
-    }
+            <?php
+        }
     } else {
         header("Location: /views/login.php");
     } ?>
